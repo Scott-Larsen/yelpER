@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <link rel="icon" type="image/png" href="http://ww-rsvp.herokuapp.com/static/favicon.png" />
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+        <title>Waynewood RSVP</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img align="text-center" width="483px" height="79" src="http://ww-rsvp.herokuapp.com/static/Waynewood_Website-Header.gif">
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container p-5">
+            {% block main %}{% endblock %}
+        </main>
+        
+        <footer class="small text-center text-muted">
+        </footer>
+
+    </body>
+
+</html>
