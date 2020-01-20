@@ -13,17 +13,10 @@
 
 {% if restaurants %}
 <h3>Yelp en Route</h3>
-<!-- <p>{{ restaurants }}</p> -->
-
-{% for restaurant in restaurants %}
-{% for item in restaurant %}
-<div> {{ item }} </div>
-<div> {{ restaurant[item] }}</div>
-
-<div> {{ restaurant[item] }}</div>
-<!-- {{ restaurant[0] }} -->
-{% endfor %}
-{% endfor  %}
+<!-- 
+{% for restaurant in restaurants %} -->
+<p> {{ restaurants }}</p>
+<!-- {% endfor %} -->
 
 
 
