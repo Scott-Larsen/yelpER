@@ -1,0 +1,54 @@
+[
+{
+"name":"Chung Chun Rice Hotdog",
+"rating":5.0,
+"location":{
+"address1":"1021 1/2 S Baldwin Ave",
+"address2":"None",
+"city":"Arcadia",
+"state":"CA",
+"postal_code":"91007"
+},
+"coordinates":{
+"latitude":34.128038,
+"longitude":-118.0549056
+},
+"phone":"+16264615717",
+"categories":[
+{
+"title":"Hot Dogs",
+"alias":"hotdog"
+},
+{
+"title":"Korean",
+"alias":"korean"
+}
+]
+},
+{
+"name":"Kazu Mori",
+"rating":5.0,
+"location":{
+"address1":"1101 W Huntington Ave",
+"address2":"None",
+"city":"Arcadia",
+"state":"CA",
+"postal_code":"91007"
+},
+"coordinates":{
+"latitude":34.131636,
+"longitude":-118.065743
+},
+"phone":"",
+"categories":[
+{
+"title":"Japanese Curry",
+"alias":"japacurry"
+},
+{
+"title":"Korean",
+"alias":"korean"
+}
+]
+}
+]

@@ -4,92 +4,122 @@
 </head>
 
 {% block title %}
-    WW RSVP
+    Yelp en Route
+{% endblock %}
+
+{% block header %}
+
+<!-- <img align="text-center" width="483px" height="79" src="http://ww-rsvp.herokuapp.com/static/Waynewood_Website-Header.gif"> -->
+<h1><a href="http://www.yelp.com" target="_blank"><img id="logo" src="static/yelpLogo.png" width="100"></a> en Route</h1>
+<div class="subheader">A personal project by <a href="http://www.ScottLarsen.com" target="_blank">Scott Larsen</a> using <a href="http://www.yelp.com" target="_blank">Yelp</a> data to search for businesses along a route.</div>
+<div>
+<!-- <form>
+  Start: <input type="text" name="gps1">&nbsp; End: <input type="text" name="gps2">
+<div>
+  <button class="RSVP btn btn-primary" type="submit" style="padding: .5rem 2rem; font-size: 2em;">Search!</button>
+</div>
+</form> -->
+
+
+<div class="lemon--div__373c0__1mboc consumer-header_search-suggest__373c0__1vwc9 arrange-unit__373c0__1piwO arrange-unit-fill__373c0__17z0h border-color--default__373c0__2oFDT">
+  <div class="lemon--div__373c0__1mboc search-suggest-container__373c0__3EGF2 border-color--default__373c0__2oFDT">
+      <div class="lemon--div__373c0__1mboc search-suggest__373c0__2EoMc">
+          <div class="lemon--div__373c0__1mboc find-search__373c0__V87qH">
+
+              <!-- <form class="lemon--form__373c0__2fChY" action="/search" id="header_find_form" role="search" method="get"> -->
+                <form class="lemon--form__373c0__2fChY" id="header_find_form" role="search" action="/" method="get">
+
+                  <div id = "find" class="lemon--div__373c0__1mboc arrange__373c0__UHqhV layout-stack-small__373c0__3cHex border-color--default__373c0__2oFDT">
+                      <div class="searchBoxWidth" class="lemon--div__373c0__1mboc arrange-unit__373c0__1piwO arrange-unit-fill__373c0__17z0h border-color--default__373c0__2oFDT">
+                          <div class="lemon--div__373c0__1mboc arrange__373c0__UHqhV layout-equal__373c0__2jcUj layout-stack-small__373c0__3cHex border-color--default__373c0__2oFDT">
+                              <div class="lemon--div__373c0__1mboc arrange-unit__373c0__1piwO border-color--default__373c0__2oFDT">
+                                  <label class="lemon--label__373c0__2BjWI label__373c0__2kYNn pseudo-input__373c0__1izA8 pseudo-input--find-near__373c0__1y16V pseudo-input--find__373c0__2636W" for="search_description"><span class="lemon--span__373c0__3997G pseudo-input-text__373c0__1PnzS display--inline__373c0__1DbOG border-color--default__373c0__2oFDT"><div class="lemon--div__373c0__1mboc responsive-hidden-small border-color--default__373c0__2oFDT"><span class="lemon--span__373c0__3997G text__373c0__2pB8f text-color--normal__373c0__K_MKN text-align--left__373c0__2pnx_ text-weight--bold__373c0__3HYJa">Find</span></div>
+                              <div class="lemon--div__373c0__1mboc display--none__373c0__14H8o responsive-small-display-block u-space-r1.5 border-color--default__373c0__2oFDT"><span class="lemon--span__373c0__3997G icon__373c0__ehCWV icon--18-search-small pseudo-input-icon__373c0__38LpX" aria-hidden="false" aria-label="Find" style="width:18px;height:18px"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="icon_svg"><path d="M15.913 14.224a1.324 1.324 0 0 0-.3-.466h.01l-3.378-3.376a5.49 5.49 0 0 0 .802-2.857 5.523 5.523 0 1 0-5.522 5.52 5.49 5.49 0 0 0 2.856-.8l3.37 3.368.006.003a1.364 1.364 0 0 0 .93.384C15.41 16 16 15.41 16 14.684c0-.163-.032-.317-.086-.46zM7.525 10.94a3.422 3.422 0 0 1-3.418-3.416 3.422 3.422 0 0 1 3.418-3.417 3.422 3.422 0 0 1 3.416 3.417 3.42 3.42 0 0 1-3.413 3.416z"></path></svg></span></div>
+                              </span>
+                              <div class="lemon--div__373c0__1mboc border-color--default__373c0__2oFDT overflow--hidden__373c0__8Jq2I">
+                                  <div class="lemon--div__373c0__1mboc typeahead__373c0__2UT8O border-color--default__373c0__2oFDT">
+                                      <input type="text" disabled="" autocomplete="off" spellcheck="false" tabindex="-1" value="" aria-hidden="true" class="input__373c0__1POmY hidden-input__373c0__3SQQL" placeholder=" ">
+                                      <input type="text" autocomplete="off" aria-autocomplete="list" tabindex="0" id="businessType" data-testid="suggest-desc-input" class="input__373c0__1POmY original-input__373c0__lpd54" placeholder="tacos, cheap dinner, Max’s">
+                                  </div>
+                              </div>
+                              </label>
+                          </div>
+
+
+                          <div id="gps1" class="lemon--div__373c0__1mboc responsive-gutter__373c0__3mUc_ location-arrange-unit__373c0__3J7iv arrange-unit__373c0__1piwO border-color--default__373c0__2oFDT">
+                              <label class="lemon--label__373c0__2BjWI label__373c0__2kYNn pseudo-input__373c0__1izA8 pseudo-input--find-near__373c0__1y16V pseudo-input--near__373c0__3Kr29" for="search_location"><span class="lemon--span__373c0__3997G pseudo-input-text__373c0__1PnzS display--inline__373c0__1DbOG border-color--default__373c0__2oFDT"><div class="lemon--div__373c0__1mboc responsive-hidden-small border-color--default__373c0__2oFDT"><span class="lemon--span__373c0__3997G text__373c0__2pB8f text-color--normal__373c0__K_MKN text-align--left__373c0__2pnx_ text-weight--bold__373c0__3HYJa">Start</span></div>
+                          <div class="lemon--div__373c0__1mboc display--none__373c0__14H8o responsive-small-display-block u-space-r1.5 border-color--default__373c0__2oFDT"><span class="lemon--span__373c0__3997G icon__373c0__ehCWV icon--18-marker icon--gray-regular__373c0__14_hK pseudo-input-icon__373c0__38LpX" aria-hidden="false" aria-label="Near" style="width:18px;height:18px"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="icon_svg"><path d="M14 7A5 5 0 0 0 4 7c0 1.97 1.15 3.658 2.806 4.472h-.17L9 16l2.363-4.528h-.17C12.85 10.658 14 8.97 14 7zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"></path></svg></span></div>
+                          </span>
+                          <div class="lemon--div__373c0__1mboc border-color--default__373c0__2oFDT overflow--hidden__373c0__8Jq2I">
+                              <div class="lemon--div__373c0__1mboc typeahead__373c0__2UT8O border-color--default__373c0__2oFDT">
+                                  <input type="text" disabled="" autocomplete="off" spellcheck="false" tabindex="-1" value="" aria-hidden="true" class="input__373c0__1POmY hidden-input__373c0__3SQQL" placeholder=" ">
+                                  <input type="text" placeholder="34.052235, -118.243683" autocomplete="off" name="gps1" aria-autocomplete="list" tabindex="0" data-testid="suggest-location-input" id="search_location" class="input__373c0__1POmY original-input__373c0__lpd54">
+                              </div>
+                              <input type="hidden" name="find_loc" value="Monrovia, CA">
+                          </div>
+                          </label>
+                      </div>
+                  </div>
+          </div>
+
+          <div class="lemon--div__373c0__1mboc responsive-gutter__373c0__3mUc_ location-arrange-unit__373c0__3J7iv arrange-unit__373c0__1piwO border-color--default__373c0__2oFDT">
+            <label class="lemon--label__373c0__2BjWI label__373c0__2kYNn pseudo-input__373c0__1izA8 pseudo-input--find-near__373c0__1y16V pseudo-input--near__373c0__3Kr29" for="search_location"><span class="lemon--span__373c0__3997G pseudo-input-text__373c0__1PnzS display--inline__373c0__1DbOG border-color--default__373c0__2oFDT"><div class="lemon--div__373c0__1mboc responsive-hidden-small border-color--default__373c0__2oFDT"><span class="lemon--span__373c0__3997G text__373c0__2pB8f text-color--normal__373c0__K_MKN text-align--left__373c0__2pnx_ text-weight--bold__373c0__3HYJa">End</span></div>
+        <div class="lemon--div__373c0__1mboc display--none__373c0__14H8o responsive-small-display-block u-space-r1.5 border-color--default__373c0__2oFDT"><span class="lemon--span__373c0__3997G icon__373c0__ehCWV icon--18-marker icon--gray-regular__373c0__14_hK pseudo-input-icon__373c0__38LpX" aria-hidden="false" aria-label="Near" style="width:18px;height:18px"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" class="icon_svg"><path d="M14 7A5 5 0 0 0 4 7c0 1.97 1.15 3.658 2.806 4.472h-.17L9 16l2.363-4.528h-.17C12.85 10.658 14 8.97 14 7zM9 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"></path></svg></span></div>
+        </span>
+        <div class="lemon--div__373c0__1mboc border-color--default__373c0__2oFDT overflow--hidden__373c0__8Jq2I">
+            <div class="lemon--div__373c0__1mboc typeahead__373c0__2UT8O border-color--default__373c0__2oFDT">
+                <input type="text" disabled="" autocomplete="off" spellcheck="false" tabindex="-1" value="" aria-hidden="true" class="input__373c0__1POmY hidden-input__373c0__3SQQL" placeholder=" ">
+                <input type="text" placeholder="34.010090, -118.496948" autocomplete="off" name="gps2" aria-autocomplete="list" tabindex="0" data-testid="suggest-location-input" id="search_location" class="input__373c0__1POmY original-input__373c0__lpd54">
+                <!-- placeholder="address, neighborhood, city, state or zip" -->
+            </div>
+            <input type="hidden" name="find_loc" value="Monrovia, CA">
+        </div>
+        </label>
+    </div>
+</div>
+</div>
+
+          <div class="lemon--div__373c0__1mboc buttons-arrange-unit__373c0__3lduT arrange-unit__373c0__1piwO layout-stack-gutter-12__373c0__2q94Z border-color--default__373c0__2oFDT">
+              <div class="lemon--div__373c0__1mboc arrange__373c0__UHqhV gutter-6__373c0__zqA5A layout-equal__373c0__2jcUj border-color--default__373c0__2oFDT">
+                  <div class="lemon--div__373c0__1mboc hidden-non-responsive-inline-block responsive-visible-small-inline-block arrange-unit__373c0__1piwO border-color--default__373c0__2oFDT"><a class="lemon--a__373c0__IEZFH button__373c0__3yl_n secondary__373c0__3Q2Us find-near-button__373c0__fRXl-" data-testid="responsive-suggest-submit" style="--mousedown-x:0px;--mousedown-y:0px;--button-width:0px" href="#"><span class="lemon--span__373c0__3997G text__373c0__221x8 text-color--inherit__373c0__9IZsg text-align--center__373c0__3W3qK text-size--inherit__373c0__26bCb">Cancel</span></a></div>
+                  <div class="lemon--div__373c0__1mboc arrange-unit__373c0__1piwO border-color--default__373c0__2oFDT">
+                      <button class="button__373c0__3yl_n primary__373c0__oJujF activated__373c0__1fzWG  search-button__373c0__3zDOg find-near-button__373c0__fRXl-" data-testid="suggest-submit" style="--mousedown-x:13.5px; --mousedown-y:24px; --button-width:48px;" type="submit" value="submit"><span class="lemon--span__373c0__3997G text__373c0__221x8 text-color--inherit__373c0__9IZsg text-align--center__373c0__3W3qK text-size--inherit__373c0__26bCb"><span class="lemon--span__373c0__3997G icon__373c0__ehCWV icon--24-search icon--currentColor__373c0__x-sG2" aria-hidden="false" aria-label="Search" style="width:24px;height:24px"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon_svg"><path d="M20.753 19.34l-4.295-4.297A7.46 7.46 0 0 0 18 10.5a7.5 7.5 0 1 0-7.5 7.5 7.46 7.46 0 0 0 4.543-1.542l4.296 4.295a1 1 0 1 0 1.412-1.414zM10.5 16A5.506 5.506 0 0 1 5 10.5C5 7.467 7.467 5 10.5 5S16 7.467 16 10.5 13.533 16 10.5 16z"></path></svg></span></span>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </form>
+  </div>
+</div>
+</div>
+</div>
+
+
+</div>
 {% endblock %}
 
 {% block main %}
+<!-- {% if restaurants %}
 
+<h1>{{ restaurants }}</h1>
 
+{% endif %} -->
 
-{% if restaurants %}
-<h3>Yelp en Route</h3>
-<!-- 
-{% for restaurant in restaurants %} -->
-<p> {{ restaurants }}</p>
-<!-- {% endfor %} -->
-
-
-
-
-
-
-<!-- <h3>What?! {{ restaurants }}</h3> -->
-
-{% endif %}
+{% for dict_item in restaurants %}
+{% for key, value in dict_item.items() %}
+<p>{{ Key }} {{ value }}</p>
+{% endfor %}
+{% endfor %}
 
 
 
 
-<!-- {% if event %}
-<h3>Thank you for RSVP'ing.  We have you down for {{ number }} people coming to the {{ event }} from Lot {{ lot }}.</h3>
-<p>If you want to RSVP for another event, please fill out below.</p>
-  {% endif %}
-
-<h1>RSVP</h1> -->
-
-{% if lot %}
-<div class="float-left">
-  You're RSVP'ing for Lot {{ lot }}. <form action="/" method="get">
-  <input type="hidden" name="lot" value="None">
-  <button class="astext">Need to RSVP for another lot?</button>
-  </form>
-</div>
-  {% endif %}
 
 
-<form action="/" method="post">
-{% if not lot %}
-        <div class="form-group">Your Lot #: 
-             <select class="form-control" name="lot">
-                 {% for j in range(lots|length) %}
-  <option value="{{ lots[j] }}">{{ lots[j] }}</option>
-        {% endfor %}
-        </select>
-        </div>
-{% endif %}
-
-        <div class="form-group">Choose Event: 
-             <select class="form-control" name="event">
-                 {% for i in range(worksheet_titles|length) %}
-  <option value="{{ worksheet_titles[i] }}">{{ worksheet_titles[i] }}</option>
-        {% endfor %}
-        </select>
-        </div>
-
-<div class="radio-group">
-  How many people will you have?<br>
-        {% for x in (0,3,6) %}
-        <div>
-                 {% for y in range(3) %}
-          <input type="radio" name="number" value={{ x+y }} id={{ x+y }} /><label for="{{ x+y }}">{{ x+y }}</label>
-        {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
-
-    <div>
-
-  9 or more? Enter your number here:<br>
-    <input type="text" name="num"><br>
-  </div>
-
-<div>
-        <button class="RSVP btn btn-primary" type="submit" style="padding: .5rem 2rem; font-size: 2em;">RSVP</button>
-      </div>
-    </form>
     
     <div style="margin-top: 20px;">
-            Problem?  E-mail Scott.Larsen [at] Waynewood.org
+            Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
     </div>
 
 {% endblock %}

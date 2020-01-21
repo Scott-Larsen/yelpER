@@ -5,6 +5,7 @@ from flask import Flask, flash, redirect, render_template, request, session, mak
 from werkzeug.exceptions import default_exceptions
 from tempfile import mkdtemp
 import os
+import json
 
 app = Flask(__name__)
 
@@ -13,62 +14,75 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 bogusRestaurants = "Bogus Restaurants"
 
-restaurants = '''
-[
-{
-"name":"Chung Chun Rice Hotdog",
-"rating":5.0,
-"location":{
-"address1":"1021 1/2 S Baldwin Ave",
-"address2":"None",
-"city":"Arcadia",
-"state":"CA",
-"postal_code":"91007"
-},
-"coordinates":{
-"latitude":34.128038,
-"longitude":-118.0549056
-},
-"phone":"+16264615717",
-"categories":[
-{
-"title":"Hot Dogs",
-"alias":"hotdog"
-},
-{
-"title":"Korean",
-"alias":"korean"
-}
-]
-},
-{
-"name":"Kazu Mori",
-"rating":5.0,
-"location":{
-"address1":"1101 W Huntington Ave",
-"address2":"None",
-"city":"Arcadia",
-"state":"CA",
-"postal_code":"91007"
-},
-"coordinates":{
-"latitude":34.131636,
-"longitude":-118.065743
-},
-"phone":"",
-"categories":[
-{
-"title":"Japanese Curry",
-"alias":"japacurry"
-},
-{
-"title":"Korean",
-"alias":"korean"
-}
-]
-}
-]
-'''
+
+with open('restaurantsShort.json') as json_file:
+    restaurants = json.load(json_file)
+
+# with open('data.txt') as json_file:
+#     data = json.load(json_file)
+#     for p in data['people']:
+#         print('Name: ' + p['name'])
+#         print('Website: ' + p['website'])
+#         print('From: ' + p['from'])
+#         print('')
+
+
+# restaurants = '''
+# [
+# {
+# "name":"Chung Chun Rice Hotdog",
+# "rating":5.0,
+# "location":{
+# "address1":"1021 1/2 S Baldwin Ave",
+# "address2":"None",
+# "city":"Arcadia",
+# "state":"CA",
+# "postal_code":"91007"
+# },
+# "coordinates":{
+# "latitude":34.128038,
+# "longitude":-118.0549056
+# },
+# "phone":"+16264615717",
+# "categories":[
+# {
+# "title":"Hot Dogs",
+# "alias":"hotdog"
+# },
+# {
+# "title":"Korean",
+# "alias":"korean"
+# }
+# ]
+# },
+# {
+# "name":"Kazu Mori",
+# "rating":5.0,
+# "location":{
+# "address1":"1101 W Huntington Ave",
+# "address2":"None",
+# "city":"Arcadia",
+# "state":"CA",
+# "postal_code":"91007"
+# },
+# "coordinates":{
+# "latitude":34.131636,
+# "longitude":-118.065743
+# },
+# "phone":"",
+# "categories":[
+# {
+# "title":"Japanese Curry",
+# "alias":"japacurry"
+# },
+# {
+# "title":"Korean",
+# "alias":"korean"
+# }
+# ]
+# }
+# ]
+# '''
 
 
 # # scope = ['https://spreadsheets.google.com/feeds']
@@ -155,7 +169,7 @@ def index():
 
     if request.method == "POST":
         return render_template("index.html", restaurants = restaurants, bogusRestaurants = bogusRestaurants)
-        
+
         # # print('Triggered top if POST')
 
         # if not request.form.get("event"):
