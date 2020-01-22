@@ -1,54 +1,1072 @@
 [
-{
-"name":"Chung Chun Rice Hotdog",
-"rating":5.0,
-"location":{
-"address1":"1021 1/2 S Baldwin Ave",
-"address2":"None",
-"city":"Arcadia",
-"state":"CA",
-"postal_code":"91007"
-},
-"coordinates":{
-"latitude":34.128038,
-"longitude":-118.0549056
-},
-"phone":"+16264615717",
-"categories":[
-{
-"title":"Hot Dogs",
-"alias":"hotdog"
-},
-{
-"title":"Korean",
-"alias":"korean"
-}
-]
-},
-{
-"name":"Kazu Mori",
-"rating":5.0,
-"location":{
-"address1":"1101 W Huntington Ave",
-"address2":"None",
-"city":"Arcadia",
-"state":"CA",
-"postal_code":"91007"
-},
-"coordinates":{
-"latitude":34.131636,
-"longitude":-118.065743
-},
-"phone":"",
-"categories":[
-{
-"title":"Japanese Curry",
-"alias":"japacurry"
-},
-{
-"title":"Korean",
-"alias":"korean"
-}
-]
-}
-]
+    {
+       "photos":[
+          "https://s3-media2.fl.yelpcdn.com/bphoto/jH3oZZglnJNM-0N4Fg4hhg/o.jpg"
+       
+ ],
+       "name":"Twisted River Saloon",
+       "url":"https://www.yelp.com/biz/twisted-river-saloon-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15415156656",
+       "rating":5.0,
+       "review_count":9,
+       "location":{
+          "address1":"1444 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"None",
+       "coordinates":{
+          "latitude":44.0462114621026,
+          "longitude":-123.00422385335
+       
+ },
+       "categories":[
+          {
+             "title":"Barbeque",
+             "alias":"bbq"
+          
+ },
+          {
+             "title":"Sports Bars",
+             "alias":"sportsbars"
+          
+ },
+          {
+             "title":"Country Dance Halls",
+             "alias":"countrydancehalls"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Former owners of the once awesome Konfusion food truck, and then eatery, on University of Oregon campus have now opened one of the coolest places in town...."
+          
+ },
+          {
+             "text":"I am writing this as I wipe the tears of joy away from my face brought on by memories of a certain place that was near and dear to me but unfortunately no..."
+          
+ },
+          {
+             "text":"I am so excited to have a clean, friendly, establishment such as this place that also serves delicious food. I really love what they have done with this..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media2.fl.yelpcdn.com/bphoto/CoyDz9yfAlo053C7g6pUwQ/o.jpg"
+       
+ ],
+       "name":"Public House",
+       "url":"https://www.yelp.com/biz/public-house-springfield-2?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15412468511",
+       "rating":4.5,
+       "review_count":56,
+       "location":{
+          "address1":"418 A St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0472800773636,
+          "longitude":-123.020532878701
+       
+ },
+       "categories":[
+          {
+             "title":"Food Court",
+             "alias":"food_court"
+          
+ },
+          {
+             "title":"Beer, Wine & Spirits",
+             "alias":"beer_and_wine"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"I love this place! I'll definitely be back to try all the various food offerings. It's an old church converted to a palace of gluttony (how blasphemous),..."
+          
+ },
+          {
+             "text":"This visit was marred by okay schnitzel and meh German potato salad. \n\nAnd the bar girl in the beer hall was snarky to us and overwhelmingly effusive to..."
+          
+ },
+          {
+             "text":"Neat unique place! It is inside an old church I believe and the stained glass and high ceilings add to the coolness of this place. There is also quite a bit..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media4.fl.yelpcdn.com/bphoto/35rl25ePlRuj4s9NMEsn1Q/o.jpg"
+       
+ ],
+       "name":"George and Violets Steakhouse",
+       "url":"https://www.yelp.com/biz/george-and-violets-steakhouse-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15413936512",
+       "rating":4.0,
+       "review_count":82,
+       "location":{
+          "address1":"305 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"None",
+       "coordinates":{
+          "latitude":44.0460792916644,
+          "longitude":-123.021757497011
+       
+ },
+       "categories":[
+          {
+             "title":"Steakhouses",
+             "alias":"steak"
+          
+ },
+          {
+             "title":"American (New)",
+             "alias":"newamerican"
+          
+ },
+          {
+             "title":"Burgers",
+             "alias":"burgers"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Awesome food and great service. Perfect atmosphere for a nice date.  Will be coming back without a doubt."
+          
+ },
+          {
+             "text":"Steak was good, service was outstanding. They highly recommended the Mac n cheese pie, not a good decision. I'm a Mac n cheese junky, this was not in my..."
+          
+ },
+          {
+             "text":"Went on a Sunday night. Service has improved although it still isn't fast. Good steak huge salad and sides. Nice atmosphere. I wish that they didn't nickle..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media1.fl.yelpcdn.com/bphoto/rnw9IFI4GjK2gyDoaL1KHQ/o.jpg"
+       
+ ],
+       "name":"Hop Valley Brewing Company",
+       "url":"https://www.yelp.com/biz/hop-valley-brewing-company-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417443330",
+       "rating":3.5,
+       "review_count":455,
+       "location":{
+          "address1":"980 Kruse Way",
+          "address2":"None",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0829499,
+          "longitude":-123.03985
+       
+ },
+       "categories":[
+          {
+             "title":"American (Traditional)",
+             "alias":"tradamerican"
+          
+ },
+          {
+             "title":"Breweries",
+             "alias":"breweries"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Great place to enjoy a meal.\nStaff is friendly and efficient. I only tried one of their brews, but it was excellent. And the food was really good too. \nAs a..."
+          
+ },
+          {
+             "text":"Based on the overall ratings I was surprised how much we enjoyed this place. I had a wedge salad and the ahi, my husband had the pizza ... everything was..."
+          
+ },
+          {
+             "text":"I really enjoy going to Hop Valley for a quick drink with friends, by myself when I need a break, or even date night with hubby. They have plenty of..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media4.fl.yelpcdn.com/bphoto/eO4uVeevzWyWyTlJiOY7fg/o.jpg"
+       
+ ],
+       "name":"Addis Ethiopian Cuisine",
+       "url":"https://www.yelp.com/biz/addis-ethiopian-cuisine-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15415105011",
+       "rating":4.5,
+       "review_count":65,
+       "location":{
+          "address1":"321 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"None",
+       "coordinates":{
+          "latitude":44.04593,
+          "longitude":-123.02164
+       
+ },
+       "categories":[
+          {
+             "title":"Ethiopian",
+             "alias":"ethiopian"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Wow, what an absolute gift to have access to this amazing food in the local area.  It had been years since I had Ethiopian food, and this place provided all..."
+          
+ },
+          {
+             "text":"This is one of my go to Ethiopian restaurants, particularly in Eugene where there are limited options!\n\nI always get a platter with different dishes and..."
+          
+ },
+          {
+             "text":"This is very good food and service!\n\nI've orders from here on Grubhub a few times now and it is always amazing.\n\nThe amazing lady (Jennete I think her name..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media4.fl.yelpcdn.com/bphoto/gZwtC5ntQry-lTYz8637cg/o.jpg"
+       
+ ],
+       "name":"Cornbread Cafe",
+       "url":"https://www.yelp.com/biz/cornbread-cafe-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15416506672",
+       "rating":4.5,
+       "review_count":35,
+       "location":{
+          "address1":"338 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"None",
+       "coordinates":{
+          "latitude":44.04633,
+          "longitude":-123.02155
+       
+ },
+       "categories":[
+          {
+             "title":"Comfort Food",
+             "alias":"comfortfood"
+          
+ },
+          {
+             "title":"Cajun/Creole",
+             "alias":"cajun"
+          
+ },
+          {
+             "title":"American (Traditional)",
+             "alias":"tradamerican"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread! corn bread!..."
+          
+ },
+          {
+             "text":"Hey ,hey,hey Cornbread Cafe is a great vegan restaurant located in Oregon. We ordered the mushroom po'boy\nChikn' dumpling \nGumbo n rice\nSalad\nMashed..."
+          
+ },
+          {
+             "text":"I'm so happy I decided to stop in Springfield and check this place out. The restaurant was busy and they were short staffed (only 1 server), but we were..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media1.fl.yelpcdn.com/bphoto/jiRuLRNj5VsRqMPvqMioXQ/o.jpg"
+       
+ ],
+       "name":"Chow",
+       "url":"https://www.yelp.com/biz/chow-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15416539193",
+       "rating":4.0,
+       "review_count":265,
+       "location":{
+          "address1":"471 S A St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0455551,
+          "longitude":-123.019934
+       
+ },
+       "categories":[
+          {
+             "title":"American (Traditional)",
+             "alias":"tradamerican"
+          
+ },
+          {
+             "title":"Sandwiches",
+             "alias":"sandwiches"
+          
+ },
+          {
+             "title":"Burgers",
+             "alias":"burgers"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Excellent food.\n\nI got the PB&J burger.  It sounded odd but it was amazing.\n\nGood fires too.\n\nI would say go there and try their burgers although they have..."
+          
+ },
+          {
+             "text":"First, I have to say we are huge Cornucopia fans. Their burgers and fries are incredible. So to give Chow a five star rating is a big deal. While their..."
+          
+ },
+          {
+             "text":"I'd first like to say... whatever that pimento cheese is, and wherever it came from.... NO thank you!  :)  That stuff has no business on a cheeseburger...."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media3.fl.yelpcdn.com/bphoto/6IHN_QBqTHIMw0F7rcCA7A/o.jpg"
+       
+ ],
+       "name":"Subo Sushi Burritos",
+       "url":"https://www.yelp.com/biz/subo-sushi-burritos-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15415058962",
+       "rating":4.5,
+       "review_count":131,
+       "location":{
+          "address1":"4205 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97478"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0457345,
+          "longitude":-122.9631921
+       
+ },
+       "categories":[
+          {
+             "title":"Sushi Bars",
+             "alias":"sushi"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"If you love seafood, this is the spot for you! They have sushi burritos and more but all I honestly know about is their sushi burritos because it's so good..."
+          
+ },
+          {
+             "text":"I love this place. It's a great sushi burrito place. The price's are somewhat fair. Compared to regular sushi it can compare to around the same. It's..."
+          
+ },
+          {
+             "text":"First time going here with my husband we ordered a black widow and a California burrito it was so delicious . It comes with its own sauce on the side that..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media4.fl.yelpcdn.com/bphoto/xPMG1nr1dxEtJhXV54h_mg/o.jpg"
+       
+ ],
+       "name":"Mali Thai Cuisine",
+       "url":"https://www.yelp.com/biz/mali-thai-cuisine-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15413575956",
+       "rating":4.5,
+       "review_count":93,
+       "location":{
+          "address1":"864 Beltline Rd",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.084958416041,
+          "longitude":-123.040082638955
+       
+ },
+       "categories":[
+          {
+             "title":"Thai",
+             "alias":"thai"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"This was my favorite restaurant during my visit in Eugene. Great vegan and vegetarian options.\n\nThe food ingredients were top notch. I feel great after..."
+          
+ },
+          {
+             "text":"I didn't want to stray too far from the hotel and Mali was across the street, so ......\n\nOverall, the food was very good.  Cashews with veggies and noodles..."
+          
+ },
+          {
+             "text":"Thanks to Mali Thai for their patience.  I've been overwhelmed and am WAY LATE on this review.  \nWent back following my surprise CLOSED on Sunday review...."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media4.fl.yelpcdn.com/bphoto/4yaEt5K78nNl9ucU-UNWHg/o.jpg"
+       
+ ],
+       "name":"Chopstix Chinese Cuisine",
+       "url":"https://www.yelp.com/biz/chopstix-chinese-cuisine-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15416548362",
+       "rating":4.0,
+       "review_count":15,
+       "location":{
+          "address1":"631 W Centennial Blvd",
+          "address2":"None",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"None",
+       "coordinates":{
+          "latitude":44.0570034,
+          "longitude":-123.0348357
+       
+ },
+       "categories":[
+          {
+             "title":"Chinese",
+             "alias":"chinese"
+          
+ },
+          {
+             "title":"Asian Fusion",
+             "alias":"asianfusion"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Finally tried Chopstix Chinese restaurant today! First of all, what an amazing and friendly staff. Louie took care of us, and was thrilled that we..."
+          
+ },
+          {
+             "text":"Brought my parents to try it out for lunch one day. They enjoyed everything, but did think the boiled fish with chili oil soup had non authentic fish..."
+          
+ },
+          {
+             "text":"I went here hoping for something semi-authentic. It didn't look like a typical americanized Chinese restaurant. Ordered the cabbage and pork belly clay pot...."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media2.fl.yelpcdn.com/bphoto/q7r6v2S0xoq90z0ITPTwgw/o.jpg"
+       
+ ],
+       "name":"Maynila Filipino Cuisine",
+       "url":"https://www.yelp.com/biz/maynila-filipino-cuisine-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15416538428",
+       "rating":4.5,
+       "review_count":50,
+       "location":{
+          "address1":"130 S 32nd St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97478"
+       
+ },
+       "price":"$",
+       "coordinates":{
+          "latitude":44.0451708,
+          "longitude":-122.9807702
+       
+ },
+       "categories":[
+          {
+             "title":"Filipino",
+             "alias":"filipino"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Well that was tasty. Holy cow. Had to give this little place 5 stars for flavor, but it's not exactly the kinda place you go to for atmosphere. Wish I..."
+          
+ },
+          {
+             "text":"The Bomb! The ultimate Halo-Halo. Hope it is still open as it was 4 years ago when I originally wrote this review but failed to post!"
+          
+ },
+          {
+             "text":"Such a cute little turo turo, sari sari store. My first time in Eugene, Oregon  and so happy to find this spot. My family and I was craving for some home..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media2.fl.yelpcdn.com/bphoto/xico9XpbaapFDUJWMBWSXw/o.jpg"
+       
+ ],
+       "name":"La Granada Latin Kitchen",
+       "url":"https://www.yelp.com/biz/la-granada-latin-kitchen-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417366114",
+       "rating":4.5,
+       "review_count":54,
+       "location":{
+          "address1":"418 A St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$",
+       "coordinates":{
+          "latitude":44.0473491667049,
+          "longitude":-123.0206341965
+       
+ },
+       "categories":[
+          {
+             "title":"Mexican",
+             "alias":"mexican"
+          
+ },
+          {
+             "title":"Latin American",
+             "alias":"latin"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"This place has never disappointed me. The food is made fresh and is by far one of the best around. The pork burrito is fantastic with pineapple. Friendly..."
+          
+ },
+          {
+             "text":"I have only tried one thing here (Taku Taku) but it was amazing!! Made fresh to order. It was a little spendy for me but that's okay- well worth it...."
+          
+ },
+          {
+             "text":"Latin food cooked with care! Absolutely Delicious! \n\nI had the La Granada Bowl, Rice, creamiest-smooth perfectly cooked beans(my heart skipped a beat with..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media2.fl.yelpcdn.com/bphoto/vMhNaR179CWLsiyckoTKvw/o.jpg"
+       
+ ],
+       "name":"El Taco Express",
+       "url":"https://www.yelp.com/biz/el-taco-express-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417413760",
+       "rating":4.5,
+       "review_count":226,
+       "location":{
+          "address1":"647 W Centennial Blvd",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$",
+       "coordinates":{
+          "latitude":44.0562298461409,
+          "longitude":-123.035679592639
+       
+ },
+       "categories":[
+          {
+             "title":"Mexican",
+             "alias":"mexican"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"One of our favorite taco spots! Not even sure if it's on the menu but there supreme nachos served over fries instead of chips is the beat thing ever!"
+          
+ },
+          {
+             "text":"The first time I came here I ordered the Chile Verde burrito and it was great!!! Today my husband and I ordered Asada & Pastor burritos and we were not..."
+          
+ },
+          {
+             "text":"Picture this: It's 2015. You've lived in San Diego all your life and suddenly, work relocates you to Oregon where you live in an old school motel for x..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media1.fl.yelpcdn.com/bphoto/KiAovjkDXt383HBBWei96g/o.jpg"
+       
+ ],
+       "name":"Benedetti's Meat Market & Deli",
+       "url":"https://www.yelp.com/biz/benedettis-meat-market-and-deli-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417467424",
+       "rating":4.5,
+       "review_count":118,
+       "location":{
+          "address1":"533 W Centennial Blvd",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0561988264004,
+          "longitude":-123.033619420238
+       
+ },
+       "categories":[
+          {
+             "title":"Meat Shops",
+             "alias":"meats"
+          
+ },
+          {
+             "title":"Delis",
+             "alias":"delis"
+          
+ },
+          {
+             "title":"Butcher",
+             "alias":"butcher"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Stumbled across this place while looking for a butcher that I can buy an assortment of different meats in a package deal for a decent price. \n\nI was NOT..."
+          
+ },
+          {
+             "text":"Italian food in Springfield, Oregon! Michael is the chef and he described each dish to us. I had the meatballs and they were so tender and filled with tasty..."
+          
+ },
+          {
+             "text":"This is the best Meat Market  & Deli and I always come here especially when I want a really fine cut of meat. Friendly service and I have to say that they..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media2.fl.yelpcdn.com/bphoto/a5P7nzUF2xAikmOYlJDhkQ/o.jpg"
+       
+ ],
+       "name":"El Pique",
+       "url":"https://www.yelp.com/biz/el-pique-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417364848",
+       "rating":4.0,
+       "review_count":105,
+       "location":{
+          "address1":"1870 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$",
+       "coordinates":{
+          "latitude":44.04611,
+          "longitude":-122.99728
+       
+ },
+       "categories":[
+          {
+             "title":"Mexican",
+             "alias":"mexican"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Great Mexican spot. The cashier is a firecracker. The food is spectacular.\n\nWhat else can you say?"
+          
+ },
+          {
+             "text":"So ive been beating around the bush about trying other little taqueria joints because i am VERY much a creature of habit, something i need to break out of i..."
+          
+ },
+          {
+             "text":"Located at the junction of Main and S 19th in Springfield, this small little delight exists. Don't let the small space and drive through throw you as there..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media3.fl.yelpcdn.com/bphoto/dIMdYV9zypxSc8zx0G9zRQ/o.jpg"
+       
+ ],
+       "name":"Ta Ra Rin Thai Cuisine",
+       "url":"https://www.yelp.com/biz/ta-ra-rin-thai-cuisine-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15415058987",
+       "rating":4.0,
+       "review_count":99,
+       "location":{
+          "address1":"1410 Mohawk Blvd",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0574838928703,
+          "longitude":-123.002665129065
+       
+ },
+       "categories":[
+          {
+             "title":"Thai",
+             "alias":"thai"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"The Thai tea was yummy, we Loved the Tom Kha soup!!! It was Sooo sooo good but the teriyaki chicken was just decent and came barely warm. the portions were..."
+          
+ },
+          {
+             "text":"Used to love this place but now I\\'m not going there again. We had to wait 45 mins to get our food. They had \"forgot\" to put in our order. During that time..."
+          
+ },
+          {
+             "text":"Consistent good food, at the spicy-ness you ask for. From mild to extra hot. I love their Chow Min with pork, spicy, because it has plenty of veggies in it..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media3.fl.yelpcdn.com/bphoto/DfDs1uQEi5GAp57Hqyt31w/o.jpg"
+       
+ ],
+       "name":"Plank Town Brewing Co",
+       "url":"https://www.yelp.com/biz/plank-town-brewing-co-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417461890",
+       "rating":3.5,
+       "review_count":353,
+       "location":{
+          "address1":"346 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.0463142,
+          "longitude":-123.0214462
+       
+ },
+       "categories":[
+          {
+             "title":"Breweries",
+             "alias":"breweries"
+          
+ },
+          {
+             "title":"American (New)",
+             "alias":"newamerican"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"Two friends and I came here for dinner and a drink and we had a nice time. I split the cheddar and bacon burger with my friend and although it was nothing..."
+          
+ },
+          {
+             "text":"It's always difficult for me to write a review that could be taken to be as disparaging.  I feel like everyone, and every place can/does have an occasional..."
+          
+ },
+          {
+             "text":"I reviewed Hilltop recently with a take-it-or-leave-it review. Plank Town is the original restaurant, with Hilltop as its sister spin-off, and PT is way..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media1.fl.yelpcdn.com/bphoto/ZskAQe7QRTjkdnsELkE_Ug/o.jpg"
+       
+ ],
+       "name":"Ciao Pizza",
+       "url":"https://www.yelp.com/biz/ciao-pizza-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15415058487",
+       "rating":4.0,
+       "review_count":220,
+       "location":{
+          "address1":"3342 Gateway St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"$$",
+       "coordinates":{
+          "latitude":44.082063,
+          "longitude":-123.042416
+       
+ },
+       "categories":[
+          {
+             "title":"Italian",
+             "alias":"italian"
+          
+ },
+          {
+             "title":"Pizza",
+             "alias":"pizza"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"So glad we finally tried this restaurant! Food and service was excellent, clean and attractive interior. Its easy to dismiss from the outside as its..."
+          
+ },
+          {
+             "text":"I was really surprised by all the 5 star reviews they have. I mean the food was good but it's not 5 star good. \n\nI got the artichoke ravioli and it was..."
+          
+ },
+          {
+             "text":"Create your own Pizza! Marinara sauce on Pizza with added yummy toppings - not disappointing at all!! \nMy friends had pasta dishes which they loved!\nPrices..."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media3.fl.yelpcdn.com/bphoto/L4Y_TV3F3SgSK6wR1bRjPQ/o.jpg"
+       
+ ],
+       "name":"El Angel Authentic Mexican Restaurant",
+       "url":"https://www.yelp.com/biz/el-angel-authentic-mexican-restaurant-springfield?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15417269155",
+       "rating":4.5,
+       "review_count":19,
+       "location":{
+          "address1":"2120 Main St",
+          "address2":"",
+          "city":"Springfield",
+          "state":"OR",
+          "postal_code":"97477"
+       
+ },
+       "price":"None",
+       "coordinates":{
+          "latitude":44.0464104418734,
+          "longitude":-122.993850516633
+       
+ },
+       "categories":[
+          {
+             "title":"Mexican",
+             "alias":"mexican"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"I was craving Mexican food but wanted to try something new and read the reviews so I ordered the enchilada dinner (chicken) and a steak chimichanga to go...."
+          
+ },
+          {
+             "text":"Very disapointed in the chicharrones sold in the market side of the store. We bought a pound of chicharones for 10 bucks and they didnt taste fresh like..."
+          
+ },
+          {
+             "text":"Restaurant is nice dining but today's visit was to the meat market portion. They have a Large variety of snacks you can't find at the standard grocer...."
+          
+ }
+       
+ ]
+    
+ },
+    {
+       "photos":[
+          "https://s3-media3.fl.yelpcdn.com/bphoto/LYdhGWwKArkiLcgG3LSnqA/o.jpg"
+       
+ ],
+       "name":"Bangers & Brews Eugene",
+       "url":"https://www.yelp.com/biz/bangers-and-brews-eugene-eugene?adjust_creative=BABeHG6d4TX7q_U6TWBfWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_graphql&utm_source=BABeHG6d4TX7q_U6TWBfWQ",
+       "phone":"+15415058004",
+       "rating":4.5,
+       "review_count":166,
+       "location":{
+          "address1":"2506 Willakenzie Rd",
+          "address2":"None",
+          "city":"Eugene",
+          "state":"OR",
+          "postal_code":"97401"
+       
+ },
+       "price":"$",
+       "coordinates":{
+          "latitude":44.07993,
+          "longitude":-123.07189
+       
+ },
+       "categories":[
+          {
+             "title":"German",
+             "alias":"german"
+          
+ },
+          {
+             "title":"Gastropubs",
+             "alias":"gastropubs"
+          
+ },
+          {
+             "title":"Beer Bar",
+             "alias":"beerbar"
+          
+ }
+       
+ ],
+       "reviews":[
+          {
+             "text":"I keep forgetting to write a review. I am so glad this place came to town. Something else needed to move to this spot instead of R.I.G. \nI really love the..."
+          
+ },
+          {
+             "text":"Pretty good Bacon/Gorganzola Fries.  I'm not a huge fan of gorganzola but that is just me.   The sausage was fine for the price.  Both employees were very..."
+          
+ },
+          {
+             "text":"Decided to make a trip out here and was not disappointed to say the least. Upon arrival I was quickly greeted by two very nice ladies that gave me an..."
+          
+ }
+       
+ ]
+    
+ }
+ ]

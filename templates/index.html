@@ -26,17 +26,33 @@
 {% endblock %}
 
 {% block main %}
-<!-- {% if restaurants %}
 
-<h1>{{ restaurants }}</h1>
+{% if restaurants %}
 
-{% endif %} -->
+<h3>All Results</h3>
 
-{% for dict_item in restaurants %}
-{% for key, value in dict_item.items() %}
-<p>{{ Key }} {{ value }}</p>
+<!-- # Photo
+# Rank
+# Name
+# URL of Yelp Page
+# Phone Number
+# Rating
+# Number of Reviews
+# Address (line 1)
+# Price
+# Style of Restaurant
+# Review
+# GPS -->
+
+<div class="listings">
+{% for restaurant in restaurants %}
+<img class="left" src="{{ restaurant['photos'][0]}}">
+<div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['phone'] }}</span></div>
+<!-- <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['display_phone'] }}</span></div> -->
 {% endfor %}
-{% endfor %}
+
+{% endif %}
+</div>
 
 
 
