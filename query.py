@@ -40,10 +40,11 @@ for i in range(1):
   {
       search(term: "restaurants", location: "Springfield, OR", limit: 20, offset: ''' + str(i * 50 + 1) + ''') {
               business {
-                photos
+                photos_small
                   name
                   url
                   phone
+                  display_phone
                 rating
                 review_count                 
                   location {
