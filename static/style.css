@@ -8,7 +8,7 @@ html, body
 
 body {
 
-    font-family: 'Helvetica-Neue', Arial, Helvetica, sans-serif;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 
 }
 
@@ -50,16 +50,76 @@ nav .navbar-brand h1 {
 h1 {
   padding: 0;
   margin: 10px;
+  margin: 10px 0 0 0;
 }
 
-logo {
+#logo {
   display: inline;
   vertical-align: sub;
 }
 
-.searchBoxWidth {
-  width: 25%;
+.subheader {
+  margin-bottom: 3px;
 }
+
+.search {
+  color: #666;
+}
+
+/* Not Working
+  form {
+  display: inline;
+  vertical-align: bottom;
+} */
+
+.searchBar {
+  /* display: inline-block; */
+  /* width: 80%; */
+  /* background-color: #ffffff; */
+  /* height: 25px; */
+  /* padding:10px; */
+  color: #333;
+  /* border: 4px; */
+  /* padding: 6px 12px; */
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+span.searchBar, span.input {
+  background-color: #ffffff;
+  padding: 10px 0 8px 12px;
+}
+
+button.searchBar {
+  background-color: #d32323;
+}
+
+input {
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  border-width: 1.5px;
+  height: 20px;
+  width: 25%;
+  font-size: 14px;
+  }
+
+#leftSearchBar {
+
+  margin-left: 12px;
+  /* padding-left: 14px;
+  border-color: aqua;
+border-radius: 4px 0 0 4px;
+border-top-left-radius: 4px;
+overflow: hidden;
+height: 20px; */
+}
+
+#lastSearchBox {
+  border-right-style: hidden;
+}
+
 
 main .form-control
 {
@@ -97,43 +157,25 @@ main tfoot
     font-weight: bold;
 }
 
-
-/*Radio Form Buttons - Based on https://codepen.io/anon/pen/GwgNmX 
-
-
-*/
-
-input[type=radio] {
-/*   position: absolute; */
-  visibility: hidden;
-  display: none;
-}
-
 label, .RSVP {
   font-family: monospace, Monaco, "Lucida Console";
   font-size: 1.6em;
-  border: solid 2px #d32323;;
-  border-radius: 3px;
-/*   color: #d32323;; */
+  border: none;
   display: inline-block;
-/*   cursor: pointer; */
-  padding: 7px 20px;
-  margin: 5px;
 }
 
 input[type=radio]:checked + label, button{
-  color: #FFF;
-  background: #d32323;;
-  font-weight: bold;
+  /* color: #FFF; */
+  background: #A71C1C;
 }
 
-/* label + input[type=radio] + label {
-  border-left: solid 2px #d32323;;
-} */
-
 .btn-primary {
-border-radius: 30px;
+border-radius: 0px 4px 4px 0px ;
+padding: 6px 12px;
 font-weight: normal;
+/* background: #d32323; */
+vertical-align: middle;
+display: inline-block;
 }
 
 .radio-group {
