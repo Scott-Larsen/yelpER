@@ -49,9 +49,17 @@
 <img class="left" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
 <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['phone'] }}</span></div>
 <!-- <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['display_phone'] }}</span></div> -->
-<span class="stars"></span>
-     <!-- src="https://s3-media0.fl.yelpcdn.com/assets/public/stars.yelp_design_web.yji-9bec2045845c24d3bff3ddb582884eda.png"> -->
 
+<span class="{{ 'lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' ~ stars[(restaurant['rating'] * 2 - 3)|int] }}"></span>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 {% endfor %}
 
 {% endif %}

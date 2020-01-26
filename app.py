@@ -12,11 +12,20 @@ app = Flask(__name__)
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-bogusRestaurants = "Bogus Restaurants"
+# bogusRestaurants = "Bogus Restaurants"
 
 
 with open('restaurantsShort.json') as json_file:
     restaurants = json.load(json_file)
+
+
+stars = ["i-stars--regular-1__373c0__1HqiV, i-stars--regular-1-half__373c0__1Ght9",
+    "i-stars--regular-2__373c0__3LFi9", "i-stars--regular-2-half__373c0__3LuvJ",
+    "i-stars--regular-3__373c0__Xlhbn", "i-stars--regular-3-half__373c0__dpRnb",
+    "i-stars--regular-4__373c0__2YrSK", "i-stars--regular-4-half__373c0__1YrPo",
+    "i-stars--regular-5__373c0__N5JxY"]
+
+
 
 # with open('data.txt') as json_file:
 #     data = json.load(json_file)
@@ -168,7 +177,7 @@ def index():
     #     pass
 
     if request.method == "POST":
-        return render_template("index.html", restaurants = restaurants, bogusRestaurants = bogusRestaurants)
+        return render_template("index.html", restaurants = restaurants, stars = stars) #, bogusRestaurants = bogusRestaurants)
 
         # # print('Triggered top if POST')
 
@@ -225,7 +234,7 @@ def index():
     else:
         # print('Triggered bottom except')
         #client.login()
-        return render_template("index.html", restaurants = restaurants, bogusRestaurants = bogusRestaurants)
+        return render_template("index.html", restaurants = restaurants, stars = stars) #, bogusRestaurants = bogusRestaurants)
         # return render_template("index.html", worksheet_titles=get_worksheet_titles(spreadsheet), lots = lots)
 
 if __name__ == '__main__':
