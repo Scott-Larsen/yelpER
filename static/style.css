@@ -5,27 +5,34 @@ html, body
     text-align: center;
     line-height: 1.75rem;
     color: #333;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-body {
+a, a:visited, a:active {
+  text-decoration: none;
+  color: rgb(43, 39, 60);
+}
 
-    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-
+a:hover {
+  text-decoration: underline;
 }
 
 left {
-  text-align: left;
   display: block;
+  float:left;
+  width: 75%;
 }
 
 .right {
-  text-align: right;
+  float: right;
   display: block;
+  width: 200px;
+  text-align: right;
 }
 
-a:link {
+/* a:link {
     color: #d32323;
-}
+} */
 
 nav
 {
@@ -221,77 +228,27 @@ display: inline-block;
 }
 
 .listings {
-  max-width: 634px;
-  margin: 0 auto 0 0;
+  max-width: 886px;
+  margin: 0 24px 24px 24px;
 }
 
+.listing {
+  color: rgb(117, 114, 128);
+  height: 226px;
+}
 
+.listingTitle {
+  color: #2b273c;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+  font-weight: bold;
+}
 
-
-.stars {
-background-attachment: scroll;
-background-clip: border-box;
-background-color: rgba(0, 0, 0, 0);
-background-image: url("https://s3-media0.fl.yelpcdn.com/assets/public/stars.yelp_design_web.yji-9bec2045845c24d3bff3ddb582884eda.png");
-background-origin: padding-box;
-background-position: 0px -366px;
-background-position-x: 0px;
-background-position-y: -366px;
-background-repeat: no-repeat;
-background-size: 132px 560px;
-border-bottom-color: rgb(230, 230, 230);
-border-bottom-style: none;
-border-bottom-width: 0px;
-border-collapse: collapse;
-border-image-outset: 0;
-border-image-repeat: stretch;
-border-image-slice: 100%;
-border-image-source: none;
-border-image-width: 1;
-border-left-color: rgb(230, 230, 230);
-border-left-style: none;
-border-left-width: 0px;
-border-right-color: rgb(230, 230, 230);
-border-right-style: none;
-border-right-width: 0px;
-border-spacing: 0px 0px;
-border-top-color: rgb(230, 230, 230);
-border-top-style: none;
-border-top-width: 0px;
-color: rgb(51, 51, 51);
-display: inline-block;
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-feature-settings: normal;
-font-kerning: auto;
-font-language-override: normal;
-font-size: 14px;
-font-size-adjust: none;
-font-stretch: 100%;
-font-style: normal;
-font-variant: normal;
-font-variant-alternates: normal;
-font-variant-caps: normal;
-font-variant-east-asian: normal;
-font-variant-ligatures: normal;
-font-variant-numeric: normal;
-font-variant-position: normal;
-font-weight: 400;
-height: 18px;
-line-height: 18px;
-list-style-image: none;
-list-style-position: outside;
-list-style-type: none;
-margin-bottom: 0px;
-margin-left: 0px;
-margin-right: 0px;
-margin-top: 0px;
-overflow: hidden;
-overflow-x: hidden;
-overflow-y: hidden;
-padding-bottom: 0px;
-padding-left: 0px;
-padding-right: 0px;
-padding-top: 0px;
-vertical-align: middle;
-width: 102px;
+.photo {
+  border-radius: 5px;
+  margin-right: 24px;
+  width: 200px;
+  width: 200px;
+  margin-bottom: 24px;
 }

@@ -46,20 +46,28 @@
 
 <div class="listings">
 {% for restaurant in restaurants %}
-<img class="left" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
-<div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['phone'] }}</span></div>
+<div class="listing">
+<img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
+<div><span class="listingTitle">{{ loop.index }}. <a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a></span><span class="right">{{ restaurant['phone'] }}</span></div>
 <!-- <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['display_phone'] }}</span></div> -->
 
-<span class="{{ 'lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' ~ stars[(restaurant['rating'] * 2 - 3)|int] }}"></span>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<span class="left {{ 'lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' ~ stars[(restaurant['rating'] * 2 - 3)|int] }}"></span>
+<span class="left lemon--span__373c0__3997G text__373c0__2Kxyz reviewCount__373c0__2r4xT text-color--black-extra-light__373c0__2OyzO text-align--left__373c0__2XGa-">{{ restaurant['review_count']}}</span>
+<span class="right">{{ restaurant['location']['address1'] }}</span></br>
+
+{% if restaurant['price'] != "None" %}
+    <span class="left">{{ restaurant['price'] }}</span>
+{% else %}
+
+{% endif %}
+
+{% for category in restaurant['categories'] %}
+<span class="left">{{ category['title'] }}&nbsp;</span>
+{% endfor %}
+<div class="left">{{ restaurant['reviews'][0]['text'] }}</div>
+
+</div>
+
 {% endfor %}
 
 {% endif %}
@@ -71,7 +79,7 @@
 
 
     
-    <div style="margin-top: 20px;">
+    <div style="margin-top: 0px; margin-bottom: 30px; text-align: center;">
             Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
     </div>
 
