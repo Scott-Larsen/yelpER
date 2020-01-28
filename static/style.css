@@ -252,3 +252,8 @@ display: inline-block;
   width: 200px;
   margin-bottom: 24px;
 }
+
+#map {
+  height: 400px;
+  width: 100%;
+}
