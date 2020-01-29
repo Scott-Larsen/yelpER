@@ -96,11 +96,11 @@
           // New map
           var map = new google.maps.Map(document.getElementById('map'), options);
     
-          // Listen for click on map
-          google.maps.event.addListener(map, 'click', function(event){
-            // Add marker
-            addMarker({coords:event.latLng});
-          });
+          // // Listen for click on map
+          // google.maps.event.addListener(map, 'click', function(event){
+          //   // Add marker
+          //   addMarker({coords:event.latLng});
+          // });
     
           /*
           // Add marker
@@ -119,19 +119,25 @@
           });
           */
     
-          // Array of markers
-          var markers = [
-            {
-                coords:{lat:restaurantsInJavascript[1][0],lng:restaurantsInJavascript[1][1]},
-                // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                content:'<h2>' + restaurantsInJavascript[1][2] + '</h2>'
-            }
-          ];
+          // // Array of markers
+          // var markers = [
+          //   {
+          //       coords:{lat:restaurantsInJavascript[1][0],lng:restaurantsInJavascript[1][1]},
+          //       // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          //       content:'<h2>' + restaurantsInJavascript[1][2] + '</h2>'
+          //   }
+          // ];
     
           // Loop through markers
-          for(var i = 0;i < markers.length;i++){
+          for(var i = 1;i <= 20;i++){
             // Add marker
-            addMarker(markers[i]);
+            if(i in restaurantsInJavascript){
+            addMarker({
+              coords:{lat:restaurantsInJavascript[i][0],lng:restaurantsInJavascript[i][1]},
+                // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                content:'<h2>' + restaurantsInJavascript[i][2] + '</h2>'}
+                );
+            }
           }
     
           // Add Marker Function
@@ -157,11 +163,19 @@
               marker.addListener('mouseover', function(){
                 infoWindow.open(map, marker);
               });
+
+              marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+              });
+
+              marker.addListener('mouseout', function(){
+                infoWindow.close(map, marker);
+              });
             }
           }
         }
       </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=REDACTEDREDACTEDREDACTEDREDACTEDREDACTED&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvUNMQzZVg3Werdmt4jo7F59gBZiM3QI4&callback=initMap"
 async defer></script>
 
 
