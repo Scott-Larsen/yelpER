@@ -33,21 +33,17 @@
 
 <h3>All Results</h3>
 
-<!-- # Photo
-# Rank
-# Name
-# URL of Yelp Page
-# Phone Number
-# Rating
-# Number of Reviews
-# Address (line 1)
-# Price
-# Style of Restaurant
-# Review
-# GPS -->
-
 <div class="listings">
+
+{% set restaurantsInJinja = dict() %}
+
 {% for restaurant in restaurants %}
+
+{% set i = loop.index %}
+{% set x = restaurantsInJinja.__setitem__(i, [restaurant['coordinates']['latitude'], restaurant['coordinates']['longitude'], restaurant['name']]) %}
+
+{{ restaurantsInJinja }}
+
 <div class="listing">
 <img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
 <div><span class="listingTitle">{{ loop.index }}. <a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a></span><span class="right">{{ restaurant['phone'] }}</span></div>
@@ -86,13 +82,17 @@
     </div>
 
     <script>
+        var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
+    </script>
+
+    <script>
         function initMap(){
           // Map options
           var options = {
             zoom:14,
-            center:{lat:34.052200,lng:-118.243700}
+            center:{lat:44.047890,lng:-123.008922}
           }
-    
+
           // New map
           var map = new google.maps.Map(document.getElementById('map'), options);
     
@@ -122,9 +122,9 @@
           // Array of markers
           var markers = [
             {
-                coords:{lat:34.055435,lng:-118.234000},
+                coords:{lat:restaurantsInJavascript[1][0],lng:restaurantsInJavascript[1][1]},
                 // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                content:'<h1>Union Station</h1>'
+                content:'<h2>' + restaurantsInJavascript[1][2] + '</h2>'
             }
           ];
     
@@ -161,7 +161,7 @@
           }
         }
       </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0mh43fRiRn_8Kvl71nwn5BFulWGTHX8k&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvUNMQzZVg3Werdmt4jo7F59gBZiM3QI4&callback=initMap"
 async defer></script>
 
 
