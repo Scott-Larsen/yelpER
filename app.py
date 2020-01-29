@@ -234,7 +234,7 @@ def index():
     else:
         # print('Triggered bottom except')
         #client.login()
-        return render_template("index.html", restaurants = restaurants, stars = stars) #, bogusRestaurants = bogusRestaurants)
+        return render_template("index.html") #, bogusRestaurants = bogusRestaurants)
         # return render_template("index.html", worksheet_titles=get_worksheet_titles(spreadsheet), lots = lots)
 
 if __name__ == '__main__':

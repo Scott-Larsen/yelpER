@@ -35,14 +35,18 @@
 
 <div class="listings">
 
-{% set restaurantsInJinja = dict() %}
+
+{% set start = [34.052235, -118.243683] %}
+{% set stop = [34.011675, -118.495541] %}
 
 {% for restaurant in restaurants %}
 
 {% set i = loop.index %}
+
+<!-- Make a dictionary of the gps data in Jinja while looping through the original JSON data. -->
 {% set x = restaurantsInJinja.__setitem__(i, [restaurant['coordinates']['latitude'], restaurant['coordinates']['longitude'], restaurant['name']]) %}
 
-{{ restaurantsInJinja }}
+<!-- {{ restaurantsInJinja }} -->
 
 <div class="listing">
 <img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
@@ -81,8 +85,11 @@
             Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
     </div>
 
+    <!-- Convert/ Make available to Javascript -->
     <script>
         var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
+        var start = {{ start }}
+        var stop = {{ stop }}
     </script>
 
     <script>
@@ -90,7 +97,7 @@
           // Map options
           var options = {
             zoom:14,
-            center:{lat:44.047890,lng:-123.008922}
+            center:{lat:(start[0] + stop[0]) / 2,lng:-123.008922}
           }
 
           // New map
