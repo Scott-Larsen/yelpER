@@ -9,12 +9,11 @@
 
 {% block header %}
 
-<!-- <img align="text-center" width="483px" height="79" src="http://ww-rsvp.herokuapp.com/static/Waynewood_Website-Header.gif"> -->
 <h1><a href="http://www.yelp.com" target="_blank"><img id="logo" src="static/yelpLogo.png" width="100"></a> en Route</h1>
 <div class="subheader">A personal project by <a href="http://www.ScottLarsen.com" target="_blank">Scott Larsen</a> using the <a href="http://www.yelp.com" target="_blank">Yelp</a> API to search for businesses along a route.</div>
 
 <div class="search">
-<form>
+<form action="/" method="get">
     <span class="searchBar">
   <span class="leftSearchBar"> Find </span><input type="text" name="businessType" placeholder="tacos, cheap dinner, Max’s">&nbsp; Start <input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp; End <input id="lastSearchBox" type="text" name="gps2" placeholder="34.052235, -118.243683">
   <button class="RSVP btn btn-primary" type="submit"><img src="static/searchIcon.png"></button>
@@ -86,6 +85,7 @@
             Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
     </div>
 
+{% if gps1 %}
     <!-- Convert/ Make available to Javascript -->
     <script>
         var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
@@ -96,7 +96,7 @@
 
     <script>
         function initMap(){
-          // Map options
+          
           var options = {
             zoom:zoom,
             center:{lat:(start[0] + stop[0]) / 2,lng:(start[1] + stop[1]) / 2}
@@ -104,38 +104,6 @@
 
           // New map
           var map = new google.maps.Map(document.getElementById('map'), options);
-    
-          // // Listen for click on map
-          // google.maps.event.addListener(map, 'click', function(event){
-          //   // Add marker
-          //   addMarker({coords:event.latLng});
-          // });
-    
-          /*
-          // Add marker
-          var marker = new google.maps.Marker({
-            position:{lat:42.4668,lng:-70.9495},
-            map:map,
-            icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-          });
-    
-          var infoWindow = new google.maps.InfoWindow({
-            content:'<h1>Lynn MA</h1>'
-          });
-    
-          marker.addListener('click', function(){
-            infoWindow.open(map, marker);
-          });
-          */
-    
-          // // Array of markers
-          // var markers = [
-          //   {
-          //       coords:{lat:restaurantsInJavascript[1][0],lng:restaurantsInJavascript[1][1]},
-          //       // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-          //       content:'<h2>' + restaurantsInJavascript[1][2] + '</h2>'
-          //   }
-          // ];
     
           // Loop through markers
           for(var i = 1;i <= 20;i++){
@@ -184,8 +152,10 @@
           }
         }
       </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvUNMQzZVg3Werdmt4jo7F59gBZiM3QI4&callback=initMap"
 async defer></script>
+{% endif %}
 
 
 {% endblock %}

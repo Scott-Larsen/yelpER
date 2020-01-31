@@ -30,7 +30,8 @@ def index():
     print('Hi')
 
 
-    if request.method == "POST":
+    if request.method == "GET":
+        print("base page")
         return render_template("index.html")
 
     else:
@@ -38,10 +39,10 @@ def index():
         zoom = 2
         print('Assigned zoom to 2')
         
-        if request.form.get("gps1") and request.form.get("gps2"):
+        if request.form.get('gps1'):
             print('Hello')
-            # gps1, gps2 = [request.form.get("gps1")], [request.form.get("gps2")]
-            # zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 47
+            gps1, gps2 = [request.form.get("gps1")], [request.form.get("gps2")]
+            zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 47
 
         return render_template("index.html", restaurants = restaurants, stars = stars, zoom = zoom)
 
