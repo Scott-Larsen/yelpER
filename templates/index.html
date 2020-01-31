@@ -39,7 +39,6 @@
 
 {% set start = [34.052235, -118.243683] %}
 {% set stop = [34.011675, -118.495541] %}
-<!-- {% set zoom = {{ zoom }} %} -->
 
 {% for restaurant in restaurants %}
 
@@ -49,8 +48,6 @@
 {% set x = restaurantsInJinja.__setitem__(i, [restaurant['coordinates']['latitude'], restaurant['coordinates']['longitude'], restaurant['name']]) %}
 
 <!-- {{ restaurantsInJinja }} -->
-
-{{ zoom }}
 
 <div class="listing">
 <img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
@@ -94,14 +91,14 @@
         var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
         var start = {{ start|tojson|safe }};
         var stop = {{ stop|tojson|safe }};
-        // var zoom = {{ zoom|tojson|safe }};
+        var zoom = {{ zoom|tojson|safe }};
     </script>
 
     <script>
         function initMap(){
           // Map options
           var options = {
-            zoom:10,
+            zoom:zoom,
             center:{lat:(start[0] + stop[0]) / 2,lng:(start[1] + stop[1]) / 2}
           }
 
