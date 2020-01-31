@@ -6,6 +6,7 @@ from werkzeug.exceptions import default_exceptions
 from tempfile import mkdtemp
 import os
 import json
+from math import sqrt
 
 app = Flask(__name__)
 
@@ -25,7 +26,7 @@ stars = ["i-stars--regular-1__373c0__1HqiV, i-stars--regular-1-half__373c0__1Ght
     "i-stars--regular-4__373c0__2YrSK", "i-stars--regular-4-half__373c0__1YrPo",
     "i-stars--regular-5__373c0__N5JxY"]
 
-
+zoom = 10
 
 # with open('data.txt') as json_file:
 #     data = json.load(json_file)
@@ -177,7 +178,12 @@ def index():
     #     pass
 
     if request.method == "POST":
-        return render_template("index.html", restaurants = restaurants, stars = stars) #, bogusRestaurants = bogusRestaurants)
+        
+
+        return render_template("index.html", restaurants = restaurants, stars = stars, zoom = zoom) #, bogusRestaurants = bogusRestaurants)
+
+        
+
 
         # # print('Triggered top if POST')
 
@@ -234,7 +240,15 @@ def index():
     else:
         # print('Triggered bottom except')
         #client.login()
-        return render_template("index.html") #, bogusRestaurants = bogusRestaurants)
+
+        if request.form.get("gps1") and request.form.get("gps2"):
+            gps1, gps2 = [request.form.get("gps1")], [request.form.get("gps2")]
+
+        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 47
+
+        print('\n\n\n\n\n' + zoom + '\n\n\n\n\n')
+
+        return render_template("index.html", restaurants = restaurants, stars = stars, zoom = zoom) #, bogusRestaurants = bogusRestaurants)
         # return render_template("index.html", worksheet_titles=get_worksheet_titles(spreadsheet), lots = lots)
 
 if __name__ == '__main__':

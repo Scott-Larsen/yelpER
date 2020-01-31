@@ -35,9 +35,11 @@
 
 <div class="listings">
 
+{% set restaurantsInJinja = dict() %}
 
 {% set start = [34.052235, -118.243683] %}
 {% set stop = [34.011675, -118.495541] %}
+<!-- {% set zoom = {{ zoom }} %} -->
 
 {% for restaurant in restaurants %}
 
@@ -47,6 +49,8 @@
 {% set x = restaurantsInJinja.__setitem__(i, [restaurant['coordinates']['latitude'], restaurant['coordinates']['longitude'], restaurant['name']]) %}
 
 <!-- {{ restaurantsInJinja }} -->
+
+{{ zoom }}
 
 <div class="listing">
 <img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
@@ -88,16 +92,17 @@
     <!-- Convert/ Make available to Javascript -->
     <script>
         var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
-        var start = {{ start }}
-        var stop = {{ stop }}
+        var start = {{ start|tojson|safe }};
+        var stop = {{ stop|tojson|safe }};
+        // var zoom = {{ zoom|tojson|safe }};
     </script>
 
     <script>
         function initMap(){
           // Map options
           var options = {
-            zoom:14,
-            center:{lat:(start[0] + stop[0]) / 2,lng:-123.008922}
+            zoom:10,
+            center:{lat:(start[0] + stop[0]) / 2,lng:(start[1] + stop[1]) / 2}
           }
 
           // New map
