@@ -13,14 +13,22 @@
 <div class="subheader">A personal project by <a href="http://www.ScottLarsen.com" target="_blank">Scott Larsen</a> using the <a href="http://www.yelp.com" target="_blank">Yelp</a> API to search for businesses along a route.</div>
 
 <div class="search">
-<form action="/" method="get">
+<form action = "/" method="get">
     <span class="searchBar">
-  <span class="leftSearchBar"> Find </span><input type="text" name="businessType" placeholder="tacos, cheap dinner, Max’s">&nbsp; Start <input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp; End <input id="lastSearchBox" type="text" name="gps2" placeholder="34.052235, -118.243683">
-  <button class="RSVP btn btn-primary" type="submit"><img src="static/searchIcon.png"></button>
+<span class="leftSearchBar">
+Find </span><input type="hidden" name="businessType" value="Restaurants">
+<input type="text" name="businessType" placeholder="tacos, cheap dinner, Max’s">&nbsp;
+
+Start <input type="hidden" name="gps1" value="34.052235, -118.243683">&nbsp;
+<input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp;
+
+End <input type="hidden" name="gps2" value="34.010961, -118.496192">
+<input id="lastSearchBox" type="text" name="gps2" placeholder="34.010961, -118.496192">
+
+<button class="RSVP btn btn-primary" type="submit"><img src="static/searchIcon.png"></button>
 </span>
 </form>
 </div>
-
 
 {% endblock %}
 
@@ -35,9 +43,6 @@
 <div class="listings">
 
 {% set restaurantsInJinja = dict() %}
-
-{% set start = [34.052235, -118.243683] %}
-{% set stop = [34.011675, -118.495541] %}
 
 {% for restaurant in restaurants %}
 
@@ -89,8 +94,8 @@
     <!-- Convert/ Make available to Javascript -->
     <script>
         var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
-        var start = {{ start|tojson|safe }};
-        var stop = {{ stop|tojson|safe }};
+        var gps1 = {{ gps1|tojson|safe }};
+        var gps2 = {{ gps2|tojson|safe }};
         var zoom = {{ zoom|tojson|safe }};
     </script>
 
@@ -99,7 +104,7 @@
           
           var options = {
             zoom:zoom,
-            center:{lat:(start[0] + stop[0]) / 2,lng:(start[1] + stop[1]) / 2}
+            center:{lat:(gps1[0] + gps2[0]) / 2,lng:(gps1[1] + gps2[1]) / 2}
           }
 
           // New map
