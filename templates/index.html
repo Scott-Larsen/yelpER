@@ -22,7 +22,7 @@ Find </span><input type="hidden" name="businessType" value="Restaurants">
 Start <input type="hidden" name="gps1" value="34.052235, -118.243683">&nbsp;
 <input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp;
 
-End <input type="hidden" name="gps2" value="34.010961, -118.496192">
+End
 <input id="lastSearchBox" type="text" name="gps2" placeholder="34.010961, -118.496192">
 
 <button class="RSVP btn btn-primary" type="submit"><img src="static/searchIcon.png"></button>
@@ -32,10 +32,11 @@ End <input type="hidden" name="gps2" value="34.010961, -118.496192">
 
 {% endblock %}
 
+{% if gps2 %}
+{{ gps2 }}
+
 {% block main %}
-
-{% if restaurants %}
-
+<main class="container p-5">
 <div id="map"></div>
 
 <h3>All Results</h3>
@@ -77,17 +78,9 @@ End <input type="hidden" name="gps2" value="34.010961, -118.496192">
 
 {% endfor %}
 
-{% endif %}
+
 </div>
 
-
-
-
-
-
-    
-    <div style="margin-top: 0px; margin-bottom: 30px; text-align: center;">
-            Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
     </div>
 
 {% if gps1 %}
@@ -160,8 +153,17 @@ End <input type="hidden" name="gps2" value="34.010961, -118.496192">
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvUNMQzZVg3Werdmt4jo7F59gBZiM3QI4&callback=initMap"
 async defer></script>
+
+{% endif %}
+</main>
+{% endblock %}
+
 {% endif %}
 
-
+{% block footer %}
+        <footer id="footer" class="text-center">
+    <div style="">
+            Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
+        </footer>
 {% endblock %}
 

@@ -21,28 +21,19 @@
     </head>
 
     <body>
-
+        <div id="page-container">
+        <div id="content-wrap">
         <nav class="navbar">
             <div class="navbar-brand">
                 {% block header %}{% endblock %}
             </div>
         </nav>
 
-        {% if get_flashed_messages() %}
-            <header>
-                <div class="alert alert-primary border text-center" role="alert">
-                    {{ get_flashed_messages() | join(" ") }}
-                </div>
-            </header>
-        {% endif %}
-
-        <main class="container p-5">
-            {% block main %}{% endblock %}
-        </main>
+        {% block main %}{% endblock %}
         
-        <footer class="small text-center text-muted">
-        </footer>
-
+        </div>
+        {% block footer %}{% endblock %}
+        </div>
     </body>
 
 </html>
