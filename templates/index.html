@@ -32,8 +32,7 @@ End
 
 {% endblock %}
 
-{% if gps2 %}
-{{ gps2 }}
+{% if restaurants %}
 
 {% block main %}
 <main class="container p-5">
@@ -80,8 +79,6 @@ End
 
 
 </div>
-
-    </div>
 
 {% if gps1 %}
     <!-- Convert/ Make available to Javascript -->
@@ -162,7 +159,6 @@ async defer></script>
 
 {% block footer %}
         <footer id="footer" class="text-center">
-    <div style="">
             Problem?  E-mail Scott [at] <a href="http://www.ScottLarsen.com">ScottLarsen.com</a>
         </footer>
 {% endblock %}
