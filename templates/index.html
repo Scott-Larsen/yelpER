@@ -16,11 +16,10 @@
 <form action = "/" method="get">
     <span class="searchBar">
 <span class="leftSearchBar">
-Find </span><input type="hidden" name="businessType" value="Restaurants">
+Find </span>
 <input type="text" name="businessType" placeholder="tacos, cheap dinner, Max’s">&nbsp;
 
-Start <input type="hidden" name="gps1" value="34.052235, -118.243683">&nbsp;
-<input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp;
+Start <input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp;
 
 End
 <input id="lastSearchBox" type="text" name="gps2" placeholder="34.010961, -118.496192">
@@ -55,7 +54,7 @@ End
 
 <div class="listing">
 <img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
-<div><span class="listingTitle">{{ loop.index }}. <a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a></span><span class="right">{{ restaurant['phone'] }}</span></div>
+<div><span class="listingTitle">{{ loop.index }}. <a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a></span><span class="right">{{ restaurant['display_phone'] }}</span></div>
 <!-- <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['display_phone'] }}</span></div> -->
 
 <span class="left {{ 'lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' ~ stars[(restaurant['rating'] * 2 - 3)|int] }}"></span>

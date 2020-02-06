@@ -24,9 +24,9 @@ stars = ["i-stars--regular-1__373c0__1HqiV, i-stars--regular-1-half__373c0__1Ght
 @app.route('/', methods=['GET', 'POST'])
 def index(result=None):
     # if request.args.get('businessType', None) and request.args.get('gps1', None) and request.args.get('gps2', None):
-    if request.args.get('gps2', None):
+    if request.args.get('gps2'):
 
-        print(request.args.get('gps2', None))
+        print(request.args.get('gps2'))
         
         gps1, gps2 = request.args['gps1'], request.args['gps2']
         gps1 = [float(e) for e in gps1.split(',')]
