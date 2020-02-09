@@ -31,7 +31,8 @@ def index(result=None):
         gps1, gps2 = request.args['gps1'], request.args['gps2']
         gps1 = [float(e) for e in gps1.split(',')]
         gps2 = [float(e) for e in gps2.split(',')]
-        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 160
+        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 20
+        print(f"Zoom - {zoom}")
         
         if testing == False:
             restaurants = yelpAPIQuery(gps1, gps2)

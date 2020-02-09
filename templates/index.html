@@ -53,7 +53,9 @@ End
 <!-- {{ restaurantsInJinja }} -->
 
 <div class="listing">
+{% if restaurant['photos'] %}
 <img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
+{% endif %}
 <div><span class="listingTitle">{{ loop.index }}. <a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a></span><span class="right">{{ restaurant['display_phone'] }}</span></div>
 <!-- <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['display_phone'] }}</span></div> -->
 

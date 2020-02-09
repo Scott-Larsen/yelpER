@@ -2,6 +2,7 @@ from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
 from config import api_key
 from jsonmerge import Merger
+from geopy import distance
 
 def yelpAPIQuery(gps1, gps2):
 
@@ -15,7 +16,7 @@ def yelpAPIQuery(gps1, gps2):
   # Create the client
   client = Client(transport=transport, fetch_schema_from_transport=True)
 
-  restaurants = []
+  businesses = []
 
   # search(term: "restaurants", location: "Corvallis, OR" radius:30000, limit: 50, offset: ''' + str(i * 50) + ''')
   # search(term: "restaurants", location: "Eugene, OR" radius:40000, limit: 50, offset: ''' + str(i * 50) + ''')
@@ -32,31 +33,38 @@ def yelpAPIQuery(gps1, gps2):
   # 1km ~= 0.010616937705638142
   # print(distance)
 
-  n = 10
-  latFactor = (abs(gps1[0] - gps2[0]) / n)
-  longFactor = (abs(gps1[1] - gps2[1]) / n)
+  dist = distance.distance(gps1, gps2).m
+  print(f"Distance - {dist}")
 
-  gps = []
+  numberOfQueryLocations = 9
+  centerQueryRadiusRelativeToDistance = 1 / 6
+  latIncrement = (abs(gps1[0] - gps2[0]) / numberOfQueryLocations)
+  longIncrement = (abs(gps1[1] - gps2[1]) / numberOfQueryLocations)
+
+  # gps = []
 
   minLat, minLong = min(gps1[0], gps2[0]), min(gps1[1], gps2[1])
-  
-  for i in range(n):
-      lat = minLat + latFactor * i
-      long = minLong + longFactor * i
-      gps.append([lat, long])
 
-  print(f"GPS: {gps}")
+  for i in range(numberOfQueryLocations):
+    lat = minLat + latIncrement * i
+    long = minLong + longIncrement * i
+    # gps.append([lat, long])
 
-  for i in range(n):
-    print(f"i = {i}\n{gps[i][0]}\n{gps[i][1]}")
+    j = i if i < numberOfQueryLocations // 2 else numberOfQueryLocations - i - 1
+
+    radius = int(dist * j * (centerQueryRadiusRelativeToDistance / (numberOfQueryLocations // 2)) + 1000)
+
+    # print(f"i = {i}\n{gps[i][0]}\n{gps[i][1]}")
+    print(f"Lat: {lat}, Long: {long}, Radius: {int(radius / 1000)}, Radius (in miles): {int(radius * 0.000621371)}")
 
     q = ('''
 
     {
-          search(term: "restaurants", latitude: ''' + str(gps[i][0]) + ", longitude: " + str(gps[i][1]) + ''', limit: 20) {
+          search(term: "restaurants", latitude: ''' + str(lat) + ", longitude: " + str(long) + ", radius:" + str(radius) + ''', limit: 20) {
                   business {
+                    id
+                    name
                     photos
-                      name
                       url
                       phone
                       display_phone
@@ -98,13 +106,13 @@ def yelpAPIQuery(gps1, gps2):
     rq = response_query['search']['business']
     # print(rq)
 
-    restaurants += rq
+    businesses += rq
 
-    print(restaurants[0]['name'], restaurants[-1]['name'])
+    # print(businesses[0]['name'], businesses[-1]['name'])
 
     # print(response_query)
     # print(rq)
-  # print(restaurants[0])
+  # print(businesses[0])
 
     # # execute and print this query
     # print('-'*3000)
@@ -112,4 +120,13 @@ def yelpAPIQuery(gps1, gps2):
     # print(client.execute(query))
 
     # # 15:11
-  return restaurants
+
+  uniqueBusinesses = { each['id'] : each for each in businesses }.values()
+
+  print(f"# of businesses - {len(businesses)}")
+  print(f"# of unique businesses - {len(uniqueBusinesses)}")
+
+  sortedUniqueBusinesses = sorted(uniqueBusinesses, key=lambda k: k['rating'], reverse=True)
+
+  # print(businesses)
+  return sortedUniqueBusinesses
