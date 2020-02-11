@@ -3,6 +3,7 @@ from gql.transport.requests import RequestsHTTPTransport
 from config import api_key
 from jsonmerge import Merger
 from geopy import distance
+from math import log
 
 def yelpAPIQuery(gps1, gps2):
 
@@ -126,7 +127,11 @@ def yelpAPIQuery(gps1, gps2):
   print(f"# of businesses - {len(businesses)}")
   print(f"# of unique businesses - {len(uniqueBusinesses)}")
 
-  sortedUniqueBusinesses = sorted(uniqueBusinesses, key=lambda k: k['rating'], reverse=True)
+  for b in uniqueBusinesses:
+    curve, rating = (log(b['review_count']) + 4) / 7, b['rating']
+    print(b['review_count'], curve, rating, curve * rating)
+
+  sortedUniqueBusinesses = sorted(uniqueBusinesses, key=lambda k: k['rating'] * (log(k['review_count']) + 4) / 7 if k['review_count'] < 20 else k['rating'], reverse=True)
 
   # print(businesses)
   return sortedUniqueBusinesses
