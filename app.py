@@ -6,6 +6,7 @@ import os
 import json
 from math import sqrt
 from yelpAPIQuery import yelpAPIQuery
+from geopy.geocoders import Nominatim
 
 # Set testing True/ False for testing or production
 testing = False
@@ -26,19 +27,29 @@ def index(result=None):
     # if request.args.get('businessType', None) and request.args.get('gps1', None) and request.args.get('gps2', None):
     if request.args.get('gps2'):
 
-        print(request.args.get('gps2'))
-        
         gps1, gps2 = request.args['gps1'], request.args['gps2']
-        gps1 = [float(e) for e in gps1.split(',')]
-        gps2 = [float(e) for e in gps2.split(',')]
-        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 20
+        
+        def convertAddressToLatLong(gps):
+            geolocator = Nominatim(user_agent="YelpER")
+            location = geolocator.geocode(gps)
+            return (location.latitude, location.longitude)
+
+        gps1, gps2 = convertAddressToLatLong(gps1), convertAddressToLatLong(gps2)
+        print(f"Start: {gps1}, End: {gps2}")
+
+        # print(request.args.get('gps2'))
+        
+        
+        # gps1 = [float(e) for e in gps1.split(',')]
+        # gps2 = [float(e) for e in gps2.split(',')]
+        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 200
         print(f"Zoom - {zoom}")
         
         if testing == False:
-            restaurants = yelpAPIQuery(gps1, gps2)
+            businesses = yelpAPIQuery(gps1, gps2)
         else:
             with open('restaurantsShort.json') as json_file:
-                restaurants = json.load(json_file)
+                businesses = json.load(json_file)
 
         # print(gps1, gps2)
         # print(type(gps1), type(gps2))
@@ -50,7 +61,7 @@ def index(result=None):
         # print(sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 47)
         # print(zoom)
 
-        return render_template('index.html', restaurants = restaurants, stars = stars, zoom = zoom, gps1 = gps1, gps2 = gps2)
+        return render_template('index.html', businesses = businesses, stars = stars, zoom = zoom, gps1 = gps1, gps2 = gps2)
     print("outside the loop")
     return render_template('index.html')
 

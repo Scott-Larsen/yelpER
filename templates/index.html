@@ -31,7 +31,7 @@ End
 
 {% endblock %}
 
-{% if restaurants %}
+{% if businesses %}
 
 {% block main %}
 <main class="container p-5">
@@ -41,38 +41,38 @@ End
 
 <div class="listings">
 
-{% set restaurantsInJinja = dict() %}
+{% set businessesInJinja = dict() %}
 
-{% for restaurant in restaurants %}
+{% for business in businesses %}
 
 {% set i = loop.index %}
 
 <!-- Make a dictionary of the gps data in Jinja while looping through the original JSON data. -->
-{% set x = restaurantsInJinja.__setitem__(i, [restaurant['coordinates']['latitude'], restaurant['coordinates']['longitude'], restaurant['name']]) %}
+{% set x = businessesInJinja.__setitem__(i, [business['coordinates']['latitude'], business['coordinates']['longitude'], business['name']]) %}
 
-<!-- {{ restaurantsInJinja }} -->
+<!-- {{ businessesInJinja }} -->
 
 <div class="listing">
-{% if restaurant['photos'] %}
-<img align="left" class="photo" src="{{ restaurant['photos'][0][:-5] + 'ls.jpg'}}">
+{% if business['photos'] %}
+<img align="left" class="photo" src="{{ business['photos'][0][:-5] + 'ls.jpg'}}">
 {% endif %}
-<div><span class="listingTitle">{{ loop.index }}. <a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a></span><span class="right">{{ restaurant['display_phone'] }}</span></div>
-<!-- <div><a href="{{restaurant['url']}}" class="left">{{ restaurant["name"] }}</a><span class="right">{{ restaurant['display_phone'] }}</span></div> -->
+<div><span class="listingTitle">{{ loop.index }}. <a href="{{business['url']}}" class="left">{{ business["name"] }}</a></span><span class="right">{{ business['display_phone'] }}</span></div>
+<!-- <div><a href="{{business['url']}}" class="left">{{ business["name"] }}</a><span class="right">{{ business['display_phone'] }}</span></div> -->
 
-<span class="left {{ 'lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' ~ stars[(restaurant['rating'] * 2 - 3)|int] }}"></span>
-<span class="left lemon--span__373c0__3997G text__373c0__2Kxyz reviewCount__373c0__2r4xT text-color--black-extra-light__373c0__2OyzO text-align--left__373c0__2XGa-">&nbsp;{{ restaurant['review_count']}}</span>
-<span class="right">{{ restaurant['location']['address1'] }}</span></br>
+<span class="left {{ 'lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' ~ stars[(business['rating'] * 2 - 3)|int] }}"></span>
+<span class="left lemon--span__373c0__3997G text__373c0__2Kxyz reviewCount__373c0__2r4xT text-color--black-extra-light__373c0__2OyzO text-align--left__373c0__2XGa-">&nbsp;{{ business['review_count']}}</span>
+<span class="right">{{ business['location']['address1'] }}</span></br>
 
-{% if restaurant['price'] != "None" %}
-    <span class="left">{{ restaurant['price'] }}</span>
+{% if business['price'] != "None" %}
+    <span class="left">{{ business['price'] }}</span>
 {% else %}
 
 {% endif %}
 
-{% for category in restaurant['categories'] %}
+{% for category in business['categories'] %}
 <span class="left">{{ category['title'] }}&nbsp;</span>
 {% endfor %}
-<div class="left">{{ restaurant['reviews'][0]['text'] }}</div>
+<div class="left">{{ business['reviews'][0]['text'] }}</div>
 
 </div>
 
@@ -84,7 +84,7 @@ End
 {% if gps1 %}
     <!-- Convert/ Make available to Javascript -->
     <script>
-        var restaurantsInJavascript = {{ restaurantsInJinja|tojson|safe }};
+        var businessesInJavascript = {{ businessesInJinja|tojson|safe }};
         var gps1 = {{ gps1|tojson|safe }};
         var gps2 = {{ gps2|tojson|safe }};
         var zoom = {{ zoom|tojson|safe }};
@@ -104,11 +104,11 @@ End
           // Loop through markers
           for(var i = 1;i <= 20;i++){
             // Add marker
-            if(i in restaurantsInJavascript){
+            if(i in businessesInJavascript){
             addMarker({
-              coords:{lat:restaurantsInJavascript[i][0],lng:restaurantsInJavascript[i][1]},
+              coords:{lat:businessesInJavascript[i][0],lng:businessesInJavascript[i][1]},
                 // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                content:'<h2>' + restaurantsInJavascript[i][2] + '</h2>'}
+                content:'<h2>' + businessesInJavascript[i][2] + '</h2>'}
                 );
             }
           }
