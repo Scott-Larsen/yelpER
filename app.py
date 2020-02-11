@@ -27,7 +27,7 @@ def index(result=None):
     # if request.args.get('businessType', None) and request.args.get('gps1', None) and request.args.get('gps2', None):
     if request.args.get('gps2'):
 
-        gps1, gps2 = request.args['gps1'], request.args['gps2']
+        businessType, gps1, gps2 = str(request.args['businessType']), request.args['gps1'], request.args['gps2']
         
         def convertAddressToLatLong(gps):
             geolocator = Nominatim(user_agent="YelpER")
@@ -42,11 +42,11 @@ def index(result=None):
         
         # gps1 = [float(e) for e in gps1.split(',')]
         # gps2 = [float(e) for e in gps2.split(',')]
-        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 200
+        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 150
         print(f"Zoom - {zoom}")
         
         if testing == False:
-            businesses = yelpAPIQuery(gps1, gps2)
+            businesses = yelpAPIQuery(businessType, gps1, gps2)
         else:
             with open('restaurantsShort.json') as json_file:
                 businesses = json.load(json_file)

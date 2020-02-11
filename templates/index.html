@@ -17,7 +17,7 @@
     <span class="searchBar">
 <span class="leftSearchBar">
 Find </span>
-<input type="text" name="businessType" placeholder="tacos, cheap dinner, Max’s">&nbsp;
+<input type="text" name="businessType" placeholder="Restaurants, tacos, cheap dinner, Max’s">&nbsp;
 
 Start <input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp;
 
@@ -53,7 +53,7 @@ End
 <!-- {{ businessesInJinja }} -->
 
 <div class="listing">
-{% if business['photos'] %}
+{% if business['photos'][0][:4] == 'http' %}
 <img align="left" class="photo" src="{{ business['photos'][0][:-5] + 'ls.jpg'}}">
 {% endif %}
 <div><span class="listingTitle">{{ loop.index }}. <a href="{{business['url']}}" class="left">{{ business["name"] }}</a></span><span class="right">{{ business['display_phone'] }}</span></div>

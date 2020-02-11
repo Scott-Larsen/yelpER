@@ -5,7 +5,7 @@ from jsonmerge import Merger
 from geopy import distance
 from math import log
 
-def yelpAPIQuery(gps1, gps2):
+def yelpAPIQuery(businessType, gps1, gps2):
 
   # define our headers
   header = {'Authorization':'bearer {}'.format(api_key),
@@ -61,7 +61,7 @@ def yelpAPIQuery(gps1, gps2):
     q = ('''
 
     {
-          search(term: "restaurants", latitude: ''' + str(lat) + ", longitude: " + str(long) + ", radius:" + str(radius) + ''', limit: 20) {
+          search(term: "''' + str(businessType) + '", latitude: ' + str(lat) + ", longitude: " + str(long) + ", radius:" + str(radius) + ''', limit: 20) {
                   business {
                     id
                     name
@@ -128,7 +128,7 @@ def yelpAPIQuery(gps1, gps2):
   print(f"# of unique businesses - {len(uniqueBusinesses)}")
 
   for b in uniqueBusinesses:
-    curve, rating = (log(b['review_count']) + 4) / 7, b['rating']
+    curve, rating = (log(b['review_count']) + 4) / 7 if b['review_count'] < 20 else b['rating'], b['rating']
     print(b['review_count'], curve, rating, curve * rating)
 
   sortedUniqueBusinesses = sorted(uniqueBusinesses, key=lambda k: k['rating'] * (log(k['review_count']) + 4) / 7 if k['review_count'] < 20 else k['rating'], reverse=True)
