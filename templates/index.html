@@ -48,7 +48,7 @@ End
 {% set i = loop.index %}
 
 <!-- Make a dictionary of the gps data in Jinja while looping through the original JSON data. -->
-{% set x = businessesInJinja.__setitem__(i, [business['coordinates']['latitude'], business['coordinates']['longitude'], business['name']]) %}
+{% set x = businessesInJinja.__setitem__(i, [business['coordinates']['latitude'], business['coordinates']['longitude'], business['name'], business['url'], business['photos'], business['rating'], business['review_count']]) %}
 
 <!-- {{ businessesInJinja }} -->
 
@@ -85,6 +85,9 @@ End
     <!-- Convert/ Make available to Javascript -->
     <script>
         var businessesInJavascript = {{ businessesInJinja|tojson|safe }};
+          
+        console.log(businessesInJavascript);
+
         var gps1 = {{ gps1|tojson|safe }};
         var gps2 = {{ gps2|tojson|safe }};
         var zoom = {{ zoom|tojson|safe }};
@@ -92,7 +95,7 @@ End
 
     <script>
         function initMap(){
-          
+
           var options = {
             zoom:zoom,
             center:{lat:(gps1[0] + gps2[0]) / 2,lng:(gps1[1] + gps2[1]) / 2}
