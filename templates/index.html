@@ -22,7 +22,7 @@ Find </span>
 Start <input type="text" name="gps1" placeholder="34.052235, -118.243683">&nbsp;
 
 End
-<input id="lastSearchBox" type="text" name="gps2" placeholder="34.010961, -118.496192">
+<input id="lastSearchBox" type="text" name="gps2" placeholder="140 New Montgomery St, San Francisco, CA 94105">
 
 <button class="RSVP btn btn-primary" type="submit"><img src="static/searchIcon.png"></button>
 </span>
@@ -102,7 +102,7 @@ End
           var map = new google.maps.Map(document.getElementById('map'), options);
     
           // Loop through markers
-          for(var i = 1;i <= 20;i++){
+          for(var i = 1;i <= 25;i++){
             // Add marker
             if(i in businessesInJavascript){
             addMarker({

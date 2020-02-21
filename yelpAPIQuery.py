@@ -37,10 +37,10 @@ def yelpAPIQuery(businessType, gps1, gps2):
   dist = distance.distance(gps1, gps2).m
   print(f"Distance - {dist}")
 
-  numberOfQueryLocations = 9
-  centerQueryRadiusRelativeToDistance = 1 / 6
-  latIncrement = (abs(gps1[0] - gps2[0]) / numberOfQueryLocations)
-  longIncrement = (abs(gps1[1] - gps2[1]) / numberOfQueryLocations)
+  numberOfQueryLocations = 7
+  centerQueryRadiusRelativeToDistance = 1 / 8
+  latIncrement = (abs(gps1[0] - gps2[0]) / (numberOfQueryLocations - 1))
+  longIncrement = (abs(gps1[1] - gps2[1]) / (numberOfQueryLocations - 1))
 
   # gps = []
 
@@ -56,7 +56,7 @@ def yelpAPIQuery(businessType, gps1, gps2):
     radius = int(dist * j * (centerQueryRadiusRelativeToDistance / (numberOfQueryLocations // 2)) + 1000)
 
     # print(f"i = {i}\n{gps[i][0]}\n{gps[i][1]}")
-    print(f"Lat: {lat}, Long: {long}, Radius: {int(radius / 1000)}, Radius (in miles): {int(radius * 0.000621371)}")
+    print(f"{lat}, {long}, Radius: {int(radius / 1000)}, Radius (in miles): {int(radius * 0.000621371)}")
 
     q = ('''
 
@@ -129,7 +129,7 @@ def yelpAPIQuery(businessType, gps1, gps2):
 
   for b in uniqueBusinesses:
     curve, rating = (log(b['review_count']) + 4) / 7 if b['review_count'] < 20 else b['rating'], b['rating']
-    print(b['review_count'], curve, rating, curve * rating)
+    # print(b['review_count'], curve, rating, curve * rating)
 
   sortedUniqueBusinesses = sorted(uniqueBusinesses, key=lambda k: k['rating'] * (log(k['review_count']) + 4) / 7 if k['review_count'] < 20 else k['rating'], reverse=True)
 

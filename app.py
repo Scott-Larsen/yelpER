@@ -42,7 +42,9 @@ def index(result=None):
         
         # gps1 = [float(e) for e in gps1.split(',')]
         # gps2 = [float(e) for e in gps2.split(',')]
-        zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 150
+        # zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 140
+        # zoom = min([(gps1[0] - gps2[0]) * 140, (gps1[1] - gps2[1]) * 140])
+        zoom = max([abs(gps1[0] - gps2[0]) * 19.6, abs(gps1[1] - gps2[1]) * 142])
         print(f"Zoom - {zoom}")
         
         if testing == False:
@@ -50,6 +52,8 @@ def index(result=None):
         else:
             with open('restaurantsShort.json') as json_file:
                 businesses = json.load(json_file)
+
+        businesses = businesses[:25] if len(businesses) > 25 else businesses
 
         # print(gps1, gps2)
         # print(type(gps1), type(gps2))
