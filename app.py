@@ -1,3 +1,5 @@
+# To run this, execute "python -m flask run" in terminal
+
 import datetime
 from flask import Flask, flash, redirect, render_template, request, session, make_response
 from werkzeug.exceptions import default_exceptions
@@ -39,21 +41,30 @@ def index(result=None):
 
         # print(request.args.get('gps2'))
         
-        
-        # gps1 = [float(e) for e in gps1.split(',')]
-        # gps2 = [float(e) for e in gps2.split(',')]
-        # zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 140
-        # zoom = min([(gps1[0] - gps2[0]) * 140, (gps1[1] - gps2[1]) * 140])
-        zoom = max([abs(gps1[0] - gps2[0]) * 19.6, abs(gps1[1] - gps2[1]) * 142])
-        print(f"Zoom - {zoom}")
+
         
         if testing == False:
-            businesses = yelpAPIQuery(businessType, gps1, gps2)
+            businesses, minLat, maxLat, minLong, maxLong = yelpAPIQuery(businessType, gps1, gps2)
         else:
             with open('restaurantsShort.json') as json_file:
                 businesses = json.load(json_file)
 
         businesses = businesses[:25] if len(businesses) > 25 else businesses
+        
+
+        # gps1 = [float(e) for e in gps1.split(',')]
+        # gps2 = [float(e) for e in gps2.split(',')]
+        # zoom = sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 140
+        # zoom = min([(gps1[0] - gps2[0]) * 140, (gps1[1] - gps2[1]) * 140])
+
+        # zoom = max([abs(gps1[0] - gps2[0]) * 19.6, abs(gps1[1] - gps2[1]) * 142])
+        LatCoefficient, LongCoefficient = 345, 2.6
+        zoom = min(abs(maxLat - minLat) * LatCoefficient, abs(maxLong - minLong) * LongCoefficient)
+        print(abs(maxLat - minLat) * LatCoefficient, abs(maxLong - minLong) * LongCoefficient, min(abs(maxLat - minLat) * LatCoefficient, abs(maxLong - minLong) * LongCoefficient))
+        print(f"Zoom - {zoom}")
+
+        mapCenterLat, mapCenterLong = (maxLat + minLat) / 2, (maxLong + minLong) / 2
+
 
         # print(gps1, gps2)
         # print(type(gps1), type(gps2))
@@ -65,7 +76,7 @@ def index(result=None):
         # print(sqrt((gps1[0] - gps2[0]) ** 2 + (gps1[1] - gps2[1]) ** 2) * 47)
         # print(zoom)
 
-        return render_template('index.html', businesses = businesses, stars = stars, zoom = zoom, gps1 = gps1, gps2 = gps2)
+        return render_template('index.html', businesses = businesses, stars = stars, zoom = zoom, gps1 = gps1, gps2 = gps2, mapCenterLat = mapCenterLat, mapCenterLong = mapCenterLong)
     print("outside the loop")
     return render_template('index.html')
 

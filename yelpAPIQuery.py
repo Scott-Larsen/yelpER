@@ -127,11 +127,27 @@ def yelpAPIQuery(businessType, gps1, gps2):
   print(f"# of businesses - {len(businesses)}")
   print(f"# of unique businesses - {len(uniqueBusinesses)}")
 
+
+  minLat, maxLat, minLong, maxLong = False, False, False, False
+
   for b in uniqueBusinesses:
+    # print(type(b['coordinates']['latitude']))
+    if minLat == False or b['coordinates']['latitude'] < minLat:
+      minLat = b['coordinates']['latitude']
+    if maxLat == False or b['coordinates']['latitude'] > minLat:
+      maxLat = b['coordinates']['latitude']
+    if minLong == False or b['coordinates']['longitude'] < minLong:
+      minLong = b['coordinates']['longitude']
+    if maxLong == False or b['coordinates']['longitude'] > minLong:
+      maxLong = b['coordinates']['longitude']
+
     curve, rating = (log(b['review_count']) + 4) / 7 if b['review_count'] < 20 else b['rating'], b['rating']
     # print(b['review_count'], curve, rating, curve * rating)
+
+  print(minLat, maxLat, minLong, maxLong)
 
   sortedUniqueBusinesses = sorted(uniqueBusinesses, key=lambda k: k['rating'] * (log(k['review_count']) + 4) / 7 if k['review_count'] < 20 else k['rating'], reverse=True)
 
   # print(businesses)
-  return sortedUniqueBusinesses
+  # print(sortedUniqueBusinesses[0])
+  return sortedUniqueBusinesses, minLat, maxLat, minLong, maxLong

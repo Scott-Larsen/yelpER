@@ -85,12 +85,13 @@ End
     <!-- Convert/ Make available to Javascript -->
     <script>
         var businessesInJavascript = {{ businessesInJinja|tojson|safe }};
-          
-        console.log(businessesInJavascript);
+        
+        var stars = {{ stars|tojson|safe }};
 
         var gps1 = {{ gps1|tojson|safe }};
         var gps2 = {{ gps2|tojson|safe }};
         var zoom = {{ zoom|tojson|safe }};
+        
     </script>
 
     <script>
@@ -98,12 +99,12 @@ End
 
           var options = {
             zoom:zoom,
-            center:{lat:(gps1[0] + gps2[0]) / 2,lng:(gps1[1] + gps2[1]) / 2}
+            center:{lat:{{ mapCenterLat }},lng:{{ mapCenterLong }}}
           }
 
           // New map
           var map = new google.maps.Map(document.getElementById('map'), options);
-    
+
           // Loop through markers
           for(var i = 1;i <= 25;i++){
             // Add marker
@@ -111,8 +112,13 @@ End
             addMarker({
               coords:{lat:businessesInJavascript[i][0],lng:businessesInJavascript[i][1]},
                 // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                content:'<h2>' + businessesInJavascript[i][2] + '</h2>'}
-                );
+                content:
+                '<div class="mapListing"><a href="' + businessesInJavascript[i][3] + '"><img align="left" src="' + businessesInJavascript[i][4][0].slice(0,-5) + 'ls.jpg" width="200" height="150"></a></div><div><span class="mapListingTitle">' + i.toString() + '. <a href="' + businessesInJavascript[i][3] + '" class="left">' + businessesInJavascript[i][2] + '</a></span></div><div><span class="left lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' + stars[businessesInJavascript[i][5] * 2 - 3] + '"></span>' + businessesInJavascript[i][6] + '</div>'
+                
+
+                
+                }
+              );
             }
           }
     
@@ -141,12 +147,13 @@ End
               });
 
               marker.addListener('click', function(){
+                infoWindow.close(map, marker);
                 infoWindow.open(map, marker);
               });
 
-              marker.addListener('mouseout', function(){
+              /* marker.addListener('mouseout', function(){
                 infoWindow.close(map, marker);
-              });
+              }); */
             }
           }
         }
