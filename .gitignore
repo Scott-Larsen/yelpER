@@ -2,5 +2,10 @@
 config.py
 dummy.html
 __pycache__/
+bin
 bin/
 lib/
+Pipfile
+pyvenv.cfg
+test.py
+*.code-workspace

@@ -90,25 +90,31 @@ End
 
         var gps1 = {{ gps1|tojson|safe }};
         var gps2 = {{ gps2|tojson|safe }};
-        var zoom = {{ zoom|tojson|safe }};
+        //var zoom = {{ zoom|tojson|safe }};
         
     </script>
 
     <script>
         function initMap(){
 
-          var options = {
-            zoom:zoom,
-            center:{lat:{{ mapCenterLat }},lng:{{ mapCenterLong }}}
-          }
+          //var options = {
+          //  zoom:zoom,
+          //  center:{lat:{{ mapCenterLat }},lng:{{ mapCenterLong }}}
+          //}
 
           // New map
           var map = new google.maps.Map(document.getElementById('map'), options);
+
+          var bounds = new google.maps.latLngBounds() // Instantiate LatLngBounds object
 
           // Loop through markers
           for(var i = 1;i <= 25;i++){
             // Add marker
             if(i in businessesInJavascript){
+
+            let lat_lng = [businessesInJavascript[i][0], businessesInJavascript[i][1]]
+            bounds.extend(lat_lng)      // Extend LatLngBounds with coordinates
+
             addMarker({
               coords:{lat:businessesInJavascript[i][0],lng:businessesInJavascript[i][1]},
                 // iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
@@ -116,9 +122,10 @@ End
                 '<div class="mapListing"><a href="' + businessesInJavascript[i][3] + '"><img align="left" src="' + businessesInJavascript[i][4][0].slice(0,-5) + 'ls.jpg" width="200" height="150"></a></div><div><span class="mapListingTitle">' + i.toString() + '. <a href="' + businessesInJavascript[i][3] + '" class="left">' + businessesInJavascript[i][2] + '</a></span></div><div><span class="left lemon--div__373c0__1mboc i-stars__373c0__1T6rz border-color--default__373c0__Y1Kuj overflow--hidden__373c0__36tt9 ' + stars[businessesInJavascript[i][5] * 2 - 3] + '"></span>' + businessesInJavascript[i][6] + '</div>'
                 
 
-                
+              console.log(bounds)    
                 }
               );
+              map.fitBounds(bounds)
             }
           }
     
