@@ -6,43 +6,29 @@
 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-
         <!-- <link rel="icon" type="image/png" href="http://ww-rsvp.herokuapp.com/static/favicon.png" /> -->
-
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
         <!-- <link rel="stylesheet" type="text/css" media="all" href="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_main.yji-e3a597ea20b7b399daa0.chunk.css">
         <link rel="stylesheet" type="text/css" media="all" href="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_main.yji-c1f7b21d437fc44e11c8.chunk.css">
         <link rel="stylesheet" type="text/css" media="all" href="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_main.yji-c1f7b21d437fc44e11c8.chunk.css"> -->
         <link rel="stylesheet" type="text/css" media="all" href="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_main.yji-ea377681e463f28c6a04.chunk.css">
 
-
         <title>Yelp en Route</title>
 
     </head>
 
     <body>
-
+        <div id="page-container">
+        <div id="content-wrap">
         <nav class="navbar">
             <div class="navbar-brand">
                 {% block header %}{% endblock %}
             </div>
         </nav>
-
-        {% if get_flashed_messages() %}
-            <header>
-                <div class="alert alert-primary border text-center" role="alert">
-                    {{ get_flashed_messages() | join(" ") }}
-                </div>
-            </header>
-        {% endif %}
-
-        <main class="container p-5">
-            {% block main %}{% endblock %}
-        </main>
-        
-        <footer class="small text-center text-muted">
-        </footer>
-
+        {% block main %}{% endblock %}
+        </div>
+        {% block footer %}{% endblock %}
+        </div>
     </body>
 
 </html>
