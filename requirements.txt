@@ -9,7 +9,7 @@ distlib==0.3.1
 filelock==3.0.12
 Flask==2.2.5
 gspread==3.1.0
-gunicorn==19.9.0
+gunicorn==22.0.0
 httplib2>=0.19.0
 idna==2.10
 itsdangerous==1.1.0
